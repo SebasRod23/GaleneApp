@@ -7,15 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0421E8952623D18E0081097F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421E8942623D18E0081097F /* HomeViewController.swift */; };
+		0421E8982623D8BB0081097F /* HomeNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421E8972623D8BB0081097F /* HomeNavController.swift */; };
+		AB559A0E2628FC3000501532 /* RetosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB559A0D2628FC3000501532 /* RetosTableViewController.swift */; };
 		AB8030E426228A04009B97F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8030E326228A04009B97F5 /* AppDelegate.swift */; };
 		AB8030E626228A04009B97F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8030E526228A04009B97F5 /* SceneDelegate.swift */; };
 		AB8030E826228A04009B97F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8030E726228A04009B97F5 /* ViewController.swift */; };
 		AB8030EB26228A04009B97F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB8030E926228A04009B97F5 /* Main.storyboard */; };
 		AB8030ED26228A05009B97F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB8030EC26228A05009B97F5 /* Assets.xcassets */; };
 		AB8030F026228A05009B97F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB8030EE26228A05009B97F5 /* LaunchScreen.storyboard */; };
+		ABDDE8FD262942D900AD550D /* RetoTerminadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDDE8FC262942D900AD550D /* RetoTerminadoViewController.swift */; };
+		B021BF002627C8BF00D0F972 /* DiagnosisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B021BEFF2627C8BF00D0F972 /* DiagnosisViewController.swift */; };
+		B021BF032627D14000D0F972 /* HistorialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B021BF022627D14000D0F972 /* HistorialTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0421E8942623D18E0081097F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0421E8972623D8BB0081097F /* HomeNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavController.swift; sourceTree = "<group>"; };
+		AB559A0D2628FC3000501532 /* RetosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetosTableViewController.swift; sourceTree = "<group>"; };
 		AB8030E026228A04009B97F5 /* GaleneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GaleneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB8030E326228A04009B97F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB8030E526228A04009B97F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +33,9 @@
 		AB8030EC26228A05009B97F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB8030EF26228A05009B97F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB8030F126228A05009B97F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABDDE8FC262942D900AD550D /* RetoTerminadoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetoTerminadoViewController.swift; sourceTree = "<group>"; };
+		B021BEFF2627C8BF00D0F972 /* DiagnosisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisViewController.swift; sourceTree = "<group>"; };
+		B021BF022627D14000D0F972 /* HistorialTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorialTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +68,19 @@
 		AB8030E226228A04009B97F5 /* GaleneApp */ = {
 			isa = PBXGroup;
 			children = (
+				B021BF022627D14000D0F972 /* HistorialTableViewController.swift */,
 				AB8030E326228A04009B97F5 /* AppDelegate.swift */,
 				AB8030E526228A04009B97F5 /* SceneDelegate.swift */,
 				AB8030E726228A04009B97F5 /* ViewController.swift */,
 				AB8030E926228A04009B97F5 /* Main.storyboard */,
+				B021BEFF2627C8BF00D0F972 /* DiagnosisViewController.swift */,
+				0421E8972623D8BB0081097F /* HomeNavController.swift */,
+				0421E8942623D18E0081097F /* HomeViewController.swift */,
 				AB8030EC26228A05009B97F5 /* Assets.xcassets */,
 				AB8030EE26228A05009B97F5 /* LaunchScreen.storyboard */,
 				AB8030F126228A05009B97F5 /* Info.plist */,
+				AB559A0D2628FC3000501532 /* RetosTableViewController.swift */,
+				ABDDE8FC262942D900AD550D /* RetoTerminadoViewController.swift */,
 			);
 			path = GaleneApp;
 			sourceTree = "<group>";
@@ -138,8 +156,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB8030E826228A04009B97F5 /* ViewController.swift in Sources */,
+				B021BF032627D14000D0F972 /* HistorialTableViewController.swift in Sources */,
 				AB8030E426228A04009B97F5 /* AppDelegate.swift in Sources */,
+				ABDDE8FD262942D900AD550D /* RetoTerminadoViewController.swift in Sources */,
+				B021BF002627C8BF00D0F972 /* DiagnosisViewController.swift in Sources */,
+				0421E8982623D8BB0081097F /* HomeNavController.swift in Sources */,
+				AB559A0E2628FC3000501532 /* RetosTableViewController.swift in Sources */,
 				AB8030E626228A04009B97F5 /* SceneDelegate.swift in Sources */,
+				0421E8952623D18E0081097F /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
