@@ -16,10 +16,10 @@ class DiagnosisViewController: UIViewController {
 
     }
     
-    
-    @IBAction func backToRoot(_ sender: UIButton) {
+    @IBAction func backToHome(_ sender: UIButton) {
         _ = navigationController?.popToRootViewController(animated: true)
     }
+    
     /*
     // MARK: - Navigation
 
