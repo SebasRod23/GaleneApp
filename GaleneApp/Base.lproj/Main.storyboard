@@ -543,7 +543,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLm-bg-duY">
-                                <rect key="frame" x="97" y="476" width="180" height="50"/>
+                                <rect key="frame" x="97.5" y="476" width="180" height="50"/>
                                 <color key="backgroundColor" red="0.42178148030000001" green="0.2636986301" blue="0.64041095889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="Xse-qY-qkT"/>
@@ -567,7 +567,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingresa la clave que hemos mandado a tu correo." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvM-Kf-wNO">
-                                <rect key="frame" x="67" y="229" width="240" height="64"/>
+                                <rect key="frame" x="67.5" y="229" width="240" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="Go0-YR-qvR"/>
                                 </constraints>
@@ -576,7 +576,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k2X-5X-hZY">
-                                <rect key="frame" x="68" y="309" width="240" height="40"/>
+                                <rect key="frame" x="67.5" y="309" width="240" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="9QL-ah-47N"/>
                                     <constraint firstAttribute="height" constant="40" id="G6J-lu-gjU"/>
@@ -613,8 +613,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recuperación" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljx-v8-Iyb">
+                                <rect key="frame" x="88" y="69" width="199" height="38"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingresa la nueva contraseña" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqa-XN-NtJ">
+                                <rect key="frame" x="67" y="202" width="241" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Confirme la nueva contraseña" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJ3-Aq-xKP">
+                                <rect key="frame" x="58" y="321" width="257" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nueva contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cUR-Bg-EHZ">
+                                <rect key="frame" x="66" y="243" width="240" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Ifh-iR-fjd"/>
+                                    <constraint firstAttribute="width" constant="240" id="TLX-0V-tno"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmar contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="amu-cX-Qin">
+                                <rect key="frame" x="66" y="366" width="240" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ihy-gy-Lw3"/>
+                                    <constraint firstAttribute="width" constant="240" id="kBf-Pz-QJt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IK8-lQ-8tv">
-                                <rect key="frame" x="97.5" y="464" width="180" height="50"/>
+                                <rect key="frame" x="97" y="479" width="180" height="50"/>
                                 <color key="backgroundColor" red="0.42178148030000001" green="0.2636986301" blue="0.64041095889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0hm-ln-Zuw"/>
@@ -628,50 +664,23 @@
                                     <segue destination="A7q-Au-6Yb" kind="show" id="qHx-AC-MBD"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recuperación" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljx-v8-Iyb">
-                                <rect key="frame" x="88" y="69" width="199" height="38"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nueva contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cUR-Bg-EHZ">
-                                <rect key="frame" x="67" y="263" width="240" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Ifh-iR-fjd"/>
-                                    <constraint firstAttribute="width" constant="240" id="TLX-0V-tno"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmar contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="amu-cX-Qin">
-                                <rect key="frame" x="67.5" y="347" width="240" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="ihy-gy-Lw3"/>
-                                    <constraint firstAttribute="width" constant="240" id="kBf-Pz-QJt"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingresa la nueva contraseña" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqa-XN-NtJ">
-                                <rect key="frame" x="67" y="202" width="241" height="24"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lzA-Cj-ySc"/>
                         <color key="backgroundColor" red="0.42745098040000001" green="0.72941176470000002" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="cUR-Bg-EHZ" firstAttribute="centerX" secondItem="Kck-Jz-8dz" secondAttribute="centerX" id="1Xm-y9-sef"/>
-                            <constraint firstItem="cUR-Bg-EHZ" firstAttribute="top" secondItem="iqa-XN-NtJ" secondAttribute="bottom" constant="37" id="7sy-MX-UCr"/>
+                            <constraint firstItem="cUR-Bg-EHZ" firstAttribute="centerX" secondItem="Kck-Jz-8dz" secondAttribute="centerX" constant="-1.5" id="1Xm-y9-sef"/>
+                            <constraint firstItem="NJ3-Aq-xKP" firstAttribute="centerX" secondItem="amu-cX-Qin" secondAttribute="centerX" id="4X9-IY-d1t"/>
+                            <constraint firstItem="cUR-Bg-EHZ" firstAttribute="top" secondItem="iqa-XN-NtJ" secondAttribute="bottom" constant="17" id="7sy-MX-UCr"/>
                             <constraint firstItem="ljx-v8-Iyb" firstAttribute="top" secondItem="lzA-Cj-ySc" secondAttribute="top" constant="69" id="9Qx-Mp-Z4L"/>
-                            <constraint firstItem="amu-cX-Qin" firstAttribute="top" secondItem="cUR-Bg-EHZ" secondAttribute="bottom" constant="44" id="CGb-mT-z3o"/>
-                            <constraint firstItem="lzA-Cj-ySc" firstAttribute="bottom" secondItem="IK8-lQ-8tv" secondAttribute="bottom" constant="133" id="HUQ-WJ-x1L"/>
+                            <constraint firstItem="amu-cX-Qin" firstAttribute="top" secondItem="cUR-Bg-EHZ" secondAttribute="bottom" constant="83" id="CGb-mT-z3o"/>
+                            <constraint firstItem="lzA-Cj-ySc" firstAttribute="bottom" secondItem="IK8-lQ-8tv" secondAttribute="bottom" constant="118" id="HUQ-WJ-x1L"/>
                             <constraint firstItem="ljx-v8-Iyb" firstAttribute="centerX" secondItem="Kck-Jz-8dz" secondAttribute="centerX" id="UNF-aJ-NQR"/>
+                            <constraint firstItem="NJ3-Aq-xKP" firstAttribute="leading" secondItem="lzA-Cj-ySc" secondAttribute="leading" constant="58" id="aEd-jV-TVS"/>
+                            <constraint firstItem="amu-cX-Qin" firstAttribute="top" secondItem="NJ3-Aq-xKP" secondAttribute="bottom" constant="21" id="hfo-6G-MSM"/>
                             <constraint firstItem="iqa-XN-NtJ" firstAttribute="top" secondItem="ljx-v8-Iyb" secondAttribute="bottom" constant="95" id="jHi-nZ-ZHi"/>
                             <constraint firstItem="IK8-lQ-8tv" firstAttribute="centerX" secondItem="Kck-Jz-8dz" secondAttribute="centerX" id="o5p-Uw-OZq"/>
                             <constraint firstItem="iqa-XN-NtJ" firstAttribute="centerX" secondItem="Kck-Jz-8dz" secondAttribute="centerX" id="pPd-Gw-VhT"/>
-                            <constraint firstItem="amu-cX-Qin" firstAttribute="centerX" secondItem="Kck-Jz-8dz" secondAttribute="centerX" id="w3X-fY-LER"/>
+                            <constraint firstItem="amu-cX-Qin" firstAttribute="centerX" secondItem="Kck-Jz-8dz" secondAttribute="centerX" constant="-1.5" id="w3X-fY-LER"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BMd-Jf-4oE"/>
@@ -688,21 +697,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="recuperacion-4" translatesAutoresizingMaskIntoConstraints="NO" id="Id3-cG-kIN">
-                                <rect key="frame" x="-4" y="0.0" width="379" height="771"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.42745098040000001" green="0.72941176470000002" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYB-1F-0Ay">
-                                <rect key="frame" x="66" y="318" width="239" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recuperación" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IjM-Pa-D51">
+                                <rect key="frame" x="88" y="132" width="199" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="Bes-sK-YDg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tu contraseña fue cambiada correctamente" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrD-9U-3XN">
+                                <rect key="frame" x="67.5" y="226" width="240" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="UF2-h9-UtI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYB-1F-0Ay">
+                                <rect key="frame" x="77.5" y="362" width="220" height="50"/>
+                                <color key="backgroundColor" red="0.42178148030000001" green="0.2636986301" blue="0.64041095889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="QCZ-NA-sb5"/>
+                                    <constraint firstAttribute="height" constant="50" id="wgY-5e-5HC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
+                                <state key="normal" title="Regresar a Login">
+                                    <color key="titleColor" red="0.99207025770000001" green="0.99221223589999996" blue="0.99203914400000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="Fe0-Zx-e0d" kind="show" id="yon-gz-Oxu"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8Ow-dC-Czy"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.42745098040000001" green="0.72941176470000002" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cYB-1F-0Ay" firstAttribute="centerX" secondItem="H5S-h9-1Du" secondAttribute="centerX" id="FGs-3A-ngu"/>
+                            <constraint firstItem="IjM-Pa-D51" firstAttribute="centerX" secondItem="H5S-h9-1Du" secondAttribute="centerX" id="HEJ-lB-G8F"/>
+                            <constraint firstItem="rrD-9U-3XN" firstAttribute="centerX" secondItem="H5S-h9-1Du" secondAttribute="centerX" id="U9G-cE-Dz9"/>
+                            <constraint firstItem="IjM-Pa-D51" firstAttribute="top" secondItem="8Ow-dC-Czy" secondAttribute="top" constant="132" id="Yvi-7L-8ma"/>
+                            <constraint firstItem="cYB-1F-0Ay" firstAttribute="top" secondItem="rrD-9U-3XN" secondAttribute="bottom" constant="70" id="bsd-B9-PLP"/>
+                            <constraint firstItem="8Ow-dC-Czy" firstAttribute="bottom" secondItem="cYB-1F-0Ay" secondAttribute="bottom" constant="235" id="e07-pg-B60"/>
+                            <constraint firstItem="rrD-9U-3XN" firstAttribute="top" secondItem="IjM-Pa-D51" secondAttribute="bottom" constant="56" id="rcP-nD-lTt"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wTQ-Pt-L6e"/>
                 </viewController>
@@ -1420,8 +1459,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="qHx-AC-MBD"/>
         <segue reference="lSM-Z4-hVa"/>
-        <segue reference="q3Y-bg-03w"/>
+        <segue reference="yon-gz-Oxu"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="dog-pic" width="450" height="450"/>
@@ -1431,7 +1471,6 @@
         <image name="mapa" width="280" height="606"/>
         <image name="photo-pic" width="491.5" height="295"/>
         <image name="pngwing.com" width="293.5" height="417"/>
-        <image name="recuperacion-4" width="273" height="604"/>
         <image name="retos" width="279" height="608"/>
         <image name="retos_sinTest" width="276" height="570"/>
         <image name="sobreNosotros" width="113" height="334"/>
