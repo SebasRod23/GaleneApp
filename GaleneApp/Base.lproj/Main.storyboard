@@ -613,21 +613,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="recuperacion-3" translatesAutoresizingMaskIntoConstraints="NO" id="vxq-hS-gI0">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="760"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.42745098040000001" green="0.72941176470000002" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IK8-lQ-8tv">
-                                <rect key="frame" x="61" y="476" width="254" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IK8-lQ-8tv">
+                                <rect key="frame" x="97.5" y="464" width="180" height="50"/>
+                                <color key="backgroundColor" red="0.42178148030000001" green="0.2636986301" blue="0.64041095889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="0hm-ln-Zuw"/>
+                                    <constraint firstAttribute="width" constant="180" id="B5t-2n-YhH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
+                                <state key="normal" title="Aceptar">
+                                    <color key="titleColor" red="0.99207025770000001" green="0.99221223589999996" blue="0.99203914400000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="A7q-Au-6Yb" kind="show" id="qHx-AC-MBD"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recuperación" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljx-v8-Iyb">
+                                <rect key="frame" x="88" y="69" width="199" height="38"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nueva contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cUR-Bg-EHZ">
+                                <rect key="frame" x="67" y="263" width="240" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Ifh-iR-fjd"/>
+                                    <constraint firstAttribute="width" constant="240" id="TLX-0V-tno"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmar contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="amu-cX-Qin">
+                                <rect key="frame" x="67.5" y="347" width="240" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ihy-gy-Lw3"/>
+                                    <constraint firstAttribute="width" constant="240" id="kBf-Pz-QJt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingresa la nueva contraseña" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqa-XN-NtJ">
+                                <rect key="frame" x="67" y="202" width="241" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lzA-Cj-ySc"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.42745098040000001" green="0.72941176470000002" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cUR-Bg-EHZ" firstAttribute="centerX" secondItem="Kck-Jz-8dz" secondAttribute="centerX" id="1Xm-y9-sef"/>
+                            <constraint firstItem="cUR-Bg-EHZ" firstAttribute="top" secondItem="iqa-XN-NtJ" secondAttribute="bottom" constant="37" id="7sy-MX-UCr"/>
+                            <constraint firstItem="ljx-v8-Iyb" firstAttribute="top" secondItem="lzA-Cj-ySc" secondAttribute="top" constant="69" id="9Qx-Mp-Z4L"/>
+                            <constraint firstItem="amu-cX-Qin" firstAttribute="top" secondItem="cUR-Bg-EHZ" secondAttribute="bottom" constant="44" id="CGb-mT-z3o"/>
+                            <constraint firstItem="lzA-Cj-ySc" firstAttribute="bottom" secondItem="IK8-lQ-8tv" secondAttribute="bottom" constant="133" id="HUQ-WJ-x1L"/>
+                            <constraint firstItem="ljx-v8-Iyb" firstAttribute="centerX" secondItem="Kck-Jz-8dz" secondAttribute="centerX" id="UNF-aJ-NQR"/>
+                            <constraint firstItem="iqa-XN-NtJ" firstAttribute="top" secondItem="ljx-v8-Iyb" secondAttribute="bottom" constant="95" id="jHi-nZ-ZHi"/>
+                            <constraint firstItem="IK8-lQ-8tv" firstAttribute="centerX" secondItem="Kck-Jz-8dz" secondAttribute="centerX" id="o5p-Uw-OZq"/>
+                            <constraint firstItem="iqa-XN-NtJ" firstAttribute="centerX" secondItem="Kck-Jz-8dz" secondAttribute="centerX" id="pPd-Gw-VhT"/>
+                            <constraint firstItem="amu-cX-Qin" firstAttribute="centerX" secondItem="Kck-Jz-8dz" secondAttribute="centerX" id="w3X-fY-LER"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BMd-Jf-4oE"/>
                 </viewController>
@@ -1386,7 +1431,6 @@
         <image name="mapa" width="280" height="606"/>
         <image name="photo-pic" width="491.5" height="295"/>
         <image name="pngwing.com" width="293.5" height="417"/>
-        <image name="recuperacion-3" width="276" height="601"/>
         <image name="recuperacion-4" width="273" height="604"/>
         <image name="retos" width="279" height="608"/>
         <image name="retos_sinTest" width="276" height="570"/>
