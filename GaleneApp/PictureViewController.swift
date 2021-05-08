@@ -9,13 +9,10 @@ import UIKit
 
 class PictureViewController: UIViewController {
 
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var aceptarButton: UIButton!
     
-    @IBOutlet weak var fotoButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        imageView.backgroundColor = .secondarySystemBackground
 
         // Do any additional setup after loading the view.
     }
@@ -28,6 +25,12 @@ class PictureViewController: UIViewController {
         picker.delegate = self
         present(picker, animated: true)
     }
+    
+    @IBAction func skipToPreInfo(_ sender: UIButton) {
+        let nextView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PreInfoViewController") as! PreInfoViewController
+        self.navigationController?.pushViewController(nextView, animated: true)
+        
+    }
     /*
     // MARK: - Navigation
 
@@ -37,6 +40,8 @@ class PictureViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
 
 }
 
@@ -48,12 +53,15 @@ extension PictureViewController : UIImagePickerControllerDelegate,
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        picker.dismiss(animated: true, completion: nil)
-        
         guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
             return
         }
-        imageView.image = image
+        //imageView.image = image
+        let nextView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PreInfoViewController") as! PreInfoViewController
+        nextView.inputImage = image
+        self.navigationController?.pushViewController(nextView, animated: true)
+        picker.dismiss(animated: true, completion: nil)
+        
     }
     
 }
