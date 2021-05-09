@@ -7,23 +7,38 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var snButton: UIButton!
     @IBOutlet weak var testbutton: UIButton!
     @IBOutlet weak var historialButton: UIButton!
+    @IBOutlet weak var profileImage: UIImageView!
+    private let picker = UIImagePickerController()
+
     override func viewDidLoad() {
 
         super.viewDidLoad()
         testbutton.layer.cornerRadius = 10
         snButton.layer.cornerRadius = 10
         historialButton.layer.cornerRadius = 10
-        print("Hello")
+        picker.delegate = self
         
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func changeProfileImage(_ sender: UIButton) {
+        picker.sourceType = UIImagePickerController.SourceType.photoLibrary
+        present(picker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        profileImage.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
