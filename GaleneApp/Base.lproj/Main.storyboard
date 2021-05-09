@@ -243,23 +243,63 @@
             </objects>
             <point key="canvasLocation" x="36" y="1168.9655172413793"/>
         </scene>
-        <!--FotoResultado-->
-        <scene sceneID="vbj-2X-mGC">
+        <!--TomarFoto-->
+        <scene sceneID="mBB-tT-vt8">
             <objects>
-                <viewController title="FotoResultado" id="2Z9-JG-B02" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qqM-LF-MaA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                <viewController title="TomarFoto" id="jcG-ST-Bqy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="inD-da-Tav">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FOTOGRAFIA TOMADA" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMn-PC-9kz">
-                                <rect key="frame" x="117" y="89" width="141" height="53"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZh-Op-FWB">
+                                <rect key="frame" x="212" y="534" width="110" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hemos detectado: Perro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1y-Us-QBp">
-                                <rect key="frame" x="48" y="378" width="278" height="62"/>
+                                <color key="backgroundColor" red="0.42178148030000001" green="0.2636986301" blue="0.64041095889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Continuar">
+                                    <color key="titleColor" red="0.80392156859999997" green="0.79215686269999996" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rjW-1i-GxI">
+                                <rect key="frame" x="20" y="74" width="335" height="427"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bh6-Ms-ffP">
+                                <rect key="frame" x="50" y="534" width="110" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.42178148030000001" green="0.2636986301" blue="0.64041095889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Tomar foto">
+                                    <color key="titleColor" red="0.80392156862745101" green="0.792156862745098" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapButton:" destination="jcG-ST-Bqy" eventType="touchUpInside" id="eKl-TJ-ScZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0PG-q2-00t"/>
+                        <color key="backgroundColor" red="0.427950263" green="0.72763651610000002" blue="0.64675420520000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hoE-Up-lHa"/>
+                    <connections>
+                        <outlet property="fotoButton" destination="Bh6-Ms-ffP" id="b2h-UZ-Pm1"/>
+                        <outlet property="imageView" destination="rjW-1i-GxI" id="d5c-CU-BOe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EYs-us-Yol" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-514" y="260"/>
+        </scene>
+        <!--PreInfoResultado-->
+        <scene sceneID="vbj-2X-mGC">
+            <objects>
+                <viewController storyboardIdentifier="PreInfoViewController" title="PreInfoResultado" id="2Z9-JG-B02" customClass="PreInfoViewController" customModule="GaleneApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qqM-LF-MaA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ahora te mostraremos los retos en base a tu foto" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1y-Us-QBp">
+                                <rect key="frame" x="34" y="435" width="307" height="88"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -267,30 +307,40 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7I-Kt-m6l">
-                                <rect key="frame" x="74" y="494" width="227" height="46"/>
+                                <rect key="frame" x="74" y="548" width="227" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.42404198650000002" green="0.72769761089999996" blue="0.65087765460000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.42178148030000001" green="0.2636986301" blue="0.64041095889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Ver resultados">
-                                    <color key="titleColor" systemColor="labelColor"/>
+                                    <color key="titleColor" red="0.80392156859999997" green="0.79215686269999996" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="cTs-G8-GGI" kind="show" id="xhT-Xs-2GF"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dog-pic" translatesAutoresizingMaskIntoConstraints="NO" id="ctV-SL-MFh">
-                                <rect key="frame" x="41" y="157" width="292" height="185"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ctV-SL-MFh">
+                                <rect key="frame" x="86" y="159" width="203" height="254"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FOTOGRAFIA TOMADA" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMn-PC-9kz">
+                                <rect key="frame" x="117" y="98" width="141" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qyp-cp-ETM"/>
-                        <color key="backgroundColor" red="0.7132357359" green="0.6313562989" blue="0.6191470027" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.427950263" green="0.72763651610000002" blue="0.64675420520000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="oOe-C9-Yge"/>
+                    <connections>
+                        <outlet property="imageInpML" destination="ctV-SL-MFh" id="FQk-4n-mR5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wuL-pa-gw8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="197.59999999999999" y="-570.76461769115451"/>
+            <point key="canvasLocation" x="376.80000000000001" y="-430.43478260869568"/>
         </scene>
         <!--SobreNosotros-->
         <scene sceneID="imX-nJ-Dt6">
@@ -447,10 +497,10 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3c-7b-ZRv">
                                 <rect key="frame" x="74" y="491" width="227" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.42404198650000002" green="0.72769761089999996" blue="0.65087765460000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.42178148030000001" green="0.2636986301" blue="0.64041095889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Terminar">
-                                    <color key="titleColor" systemColor="labelColor"/>
+                                    <color key="titleColor" red="0.80392156859999997" green="0.79215686269999996" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="backToHome:" destination="cTs-G8-GGI" eventType="touchUpInside" id="KB6-uh-4b6"/>
@@ -458,13 +508,13 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="D9k-mt-hu6"/>
-                        <color key="backgroundColor" red="0.7132357359" green="0.6313562989" blue="0.6191470027" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.427950263" green="0.72763651610000002" blue="0.64675420520000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="zVB-Pb-5qi"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S7a-BI-xJy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1096.8" y="-570.76461769115451"/>
+            <point key="canvasLocation" x="1265" y="-430"/>
         </scene>
         <!--Recuperacion-->
         <scene sceneID="xkB-IU-KtX">
@@ -1066,7 +1116,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zpt-xl-laC">
                                 <rect key="frame" x="74" y="269" width="227" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.42404198650000002" green="0.72769761089999996" blue="0.65087765460000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.98389106989999997" green="0.62687462569999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Leve">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -1082,7 +1132,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GA5-SF-7pW">
                                 <rect key="frame" x="74" y="428" width="227" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.42404198650000002" green="0.72769761089999996" blue="0.65087765460000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.98389106989999997" green="0.62687462569999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Bastante">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -1098,7 +1148,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dli-cg-JQw">
                                 <rect key="frame" x="74" y="347" width="227" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.42404198650000002" green="0.72769761089999996" blue="0.65087765460000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.98389106989999997" green="0.62687462569999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Moderado">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -1107,10 +1157,10 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKe-5Z-0R6">
                                 <rect key="frame" x="205" y="511" width="136" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.98389106989999997" green="0.62687462569999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.42178148030000001" green="0.2636986301" blue="0.64041095889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Siguiente">
-                                    <color key="titleColor" systemColor="labelColor"/>
+                                    <color key="titleColor" red="0.80392156859999997" green="0.79215686269999996" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="xvV-Kl-hQR" kind="show" id="KSl-iQ-oNQ"/>
@@ -1119,7 +1169,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YiE-UY-3Yy">
                                 <rect key="frame" x="74" y="193" width="227" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.42404198650000002" green="0.72769761089999996" blue="0.65087765460000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.98389106989999997" green="0.62687462569999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="No">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -1127,13 +1177,13 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lgl-Q2-Tot"/>
-                        <color key="backgroundColor" red="0.7132357359" green="0.6313562989" blue="0.6191470027" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.427950263" green="0.72763651610000002" blue="0.64675420520000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="fiS-Wm-IAq"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gQj-7E-gqh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1543.2" y="-526.6866566716642"/>
+            <point key="canvasLocation" x="-1526" y="-430"/>
         </scene>
         <!--Historial-->
         <scene sceneID="0BK-bh-u5C">
@@ -1394,7 +1444,7 @@
         <!--SolicitudFoto-->
         <scene sceneID="6xl-nx-0yJ">
             <objects>
-                <viewController title="SolicitudFoto" id="xvV-Kl-hQR" sceneMemberID="viewController">
+                <viewController title="SolicitudFoto" id="xvV-Kl-hQR" customClass="PictureViewController" customModule="GaleneApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FSS-bM-yZv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1409,13 +1459,13 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDu-oN-401">
                                 <rect key="frame" x="119" y="522" width="136" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.98389106989999997" green="0.62687462569999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.42178148030000001" green="0.2636986301" blue="0.64041095889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Tomar foto">
-                                    <color key="titleColor" systemColor="labelColor"/>
+                                <state key="normal" title="Aceptar">
+                                    <color key="titleColor" red="0.80392156859999997" green="0.79215686269999996" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2Z9-JG-B02" kind="show" id="f7n-pL-Pgs"/>
+                                    <action selector="didTapButton:" destination="xvV-Kl-hQR" eventType="touchUpInside" id="QKP-xw-hlk"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A continuación te pediremos que tomes una foto a algo cercano a ti que te guste o que se relacione con algo que te gusta." lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0O-Ex-Z6p">
@@ -1428,15 +1478,29 @@
                                 <rect key="frame" x="67" y="315" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IoG-Ki-8oM">
+                                <rect key="frame" x="286" y="522" width="73" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.42178148030000001" green="0.2636986301" blue="0.64041095889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Omitir">
+                                    <color key="titleColor" red="0.80392156859999997" green="0.79215686269999996" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="skipToPreInfo:" destination="xvV-Kl-hQR" eventType="touchUpInside" id="vUn-PZ-wdC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ll9-kE-270"/>
-                        <color key="backgroundColor" red="0.7132357359" green="0.6313562989" blue="0.6191470027" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.427950263" green="0.72763651610000002" blue="0.64675420520000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="zy5-bZ-CiB"/>
+                    <connections>
+                        <outlet property="aceptarButton" destination="FDu-oN-401" id="Y5Y-6L-3NO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KeP-j1-Xye" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-525.60000000000002" y="-439.43028485757122"/>
+            <point key="canvasLocation" x="-514" y="-429"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JHg-x1-dy4">
@@ -1497,11 +1561,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lSM-Z4-hVa"/>
+        <segue reference="XYD-qG-vWF"/>
         <segue reference="I9P-q7-hIM"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="dog-pic" width="450" height="450"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="man-running-symball-og-01-jkqqdt" width="3333" height="3333"/>
         <image name="map" catalog="system" width="128" height="110"/>
