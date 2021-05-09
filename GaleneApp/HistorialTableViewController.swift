@@ -44,21 +44,14 @@ class HistorialTableViewController: UITableViewController, UISearchResultsUpdati
             tableView.delegate = self
             
             if let url = URL(string: direccion) {
-                do {
-                    //let contents = try String(contentsOf: url)
-                    //print(contents)
-                    print(url)
-                    let datosCrudos = try? Data(contentsOf: url)
-                    nuevoArray = try! JSONSerialization.jsonObject(with: datosCrudos!) as? [Any]
-                    datosFiltrados = nuevoArray!
-                    searchController.searchResultsUpdater=self
-                    searchController.dimsBackgroundDuringPresentation=false
-                    searchController.hidesNavigationBarDuringPresentation=false
-                    tableView.tableHeaderView=searchController.searchBar
-                } catch {
-                    // contents could not be loaded
-                    print("contents could not be loaded")
-                }
+                print(url)
+                let datosCrudos = try? Data(contentsOf: url)
+                nuevoArray = try! JSONSerialization.jsonObject(with: datosCrudos!) as? [Any]
+                datosFiltrados = nuevoArray!
+                searchController.searchResultsUpdater=self
+                searchController.obscuresBackgroundDuringPresentation=false
+                searchController.hidesNavigationBarDuringPresentation=false
+                tableView.tableHeaderView=searchController.searchBar
             } else {
                 // the URL was bad!
                 print("the URL was bad!")
@@ -92,7 +85,7 @@ class HistorialTableViewController: UITableViewController, UISearchResultsUpdati
             var cell = tableView.dequeueReusableCell(withIdentifier: "historial", for: indexPath)as! HistorialTableViewCell
                 
             // Configure the cell...
-            if (cell == nil) {
+            if (object_getClass(cell)?.description()  == "NSNull") {
                 cell = UITableViewCell( style: UITableViewCell.CellStyle.default, reuseIdentifier: "historial") as! HistorialTableViewCell
                 
             }
