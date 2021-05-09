@@ -35,16 +35,9 @@ class RetosTableViewController: UITableViewController {
             tableView.delegate = self
             
             if let url = URL(string: direccion) {
-                do {
-                    //let contents = try String(contentsOf: url)
-                    //print(contents)
-                    print(url)
-                    let datosCrudos = try? Data(contentsOf: url)
-                    nuevoArray = try! JSONSerialization.jsonObject(with: datosCrudos!) as? [Any]
-                } catch {
-                    // contents could not be loaded
-                    print("contents could not be loaded")
-                }
+                print(url)
+                let datosCrudos = try? Data(contentsOf: url)
+                nuevoArray = try! JSONSerialization.jsonObject(with: datosCrudos!) as? [Any]
             } else {
                 // the URL was bad!
                 print("the URL was bad!")
@@ -73,7 +66,7 @@ class RetosTableViewController: UITableViewController {
             var cell = tableView.dequeueReusableCell(withIdentifier: "reto", for: indexPath)as! RetosTableViewCell
                 
             // Configure the cell...
-            if (cell == nil) {
+            if (object_getClass(cell)?.description()  == "NSNull") {
                 cell = UITableViewCell( style: UITableViewCell.CellStyle.default, reuseIdentifier: "reto") as! RetosTableViewCell
                 
             }

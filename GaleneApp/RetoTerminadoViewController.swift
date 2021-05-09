@@ -16,7 +16,7 @@ class RetoTerminadoViewController: UIViewController {
         super.viewDidLoad()
         shareButton!.layer.cornerRadius = 10
         retoLabel.text=retoTerminado
-        print(retoTerminado)
+        print(retoTerminado!)
         // Do any additional setup after loading the view.
     }
     
