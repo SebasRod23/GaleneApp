@@ -259,7 +259,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ahora te mostraremos los retos en base a tu foto" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1y-Us-QBp">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hemos detectado: " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1y-Us-QBp">
                                 <rect key="frame" x="34" y="435" width="307" height="88"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -296,6 +296,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="oOe-C9-Yge"/>
                     <connections>
+                        <outlet property="answerML" destination="k1y-Us-QBp" id="bbp-Zo-P5Y"/>
                         <outlet property="imageInpML" destination="ctV-SL-MFh" id="FQk-4n-mR5"/>
                     </connections>
                 </viewController>
@@ -1429,6 +1430,16 @@
                                     <action selector="skipToPreInfo:" destination="xvV-Kl-hQR" eventType="touchUpInside" id="vUn-PZ-wdC"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kn-Po-1kN">
+                                <rect key="frame" x="31" y="526" width="52" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ALBUM">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectAlbumPhoto:" destination="xvV-Kl-hQR" eventType="touchUpInside" id="Q5f-01-vBV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ll9-kE-270"/>
                         <color key="backgroundColor" red="0.427950263" green="0.72763651610000002" blue="0.64675420520000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1436,6 +1447,7 @@
                     <navigationItem key="navigationItem" id="zy5-bZ-CiB"/>
                     <connections>
                         <outlet property="aceptarButton" destination="FDu-oN-401" id="Y5Y-6L-3NO"/>
+                        <outlet property="presentImage" destination="por-Xk-Nc7" id="n6k-dg-0zg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KeP-j1-Xye" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -10,10 +10,13 @@ import UIKit
 class PreInfoViewController: UIViewController {
     
     @IBOutlet weak var imageInpML: UIImageView!
+    @IBOutlet weak var answerML: UILabel!
     var inputImage: UIImage?
+    var inputAnswerML : String?
     override func viewDidLoad() {
         super.viewDidLoad()
         imageInpML.image = inputImage
+        answerML.text = inputAnswerML
         // Do any additional setup after loading the view.
     }
     

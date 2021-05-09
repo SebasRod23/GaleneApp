@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0421E8952623D18E0081097F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421E8942623D18E0081097F /* HomeViewController.swift */; };
 		0421E8982623D8BB0081097F /* HomeNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421E8972623D8BB0081097F /* HomeNavController.swift */; };
+		508D043A2647870E00A09AF6 /* GaleneModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 508D04392647870E00A09AF6 /* GaleneModel.mlmodel */; };
 		50907A002644C5A20040C357 /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509079FF2644C5A20040C357 /* PictureViewController.swift */; };
 		50F89F2626461002003641EE /* PreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F89F2526461001003641EE /* PreInfoViewController.swift */; };
 		AB559A0E2628FC3000501532 /* RetosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB559A0D2628FC3000501532 /* RetosTableViewController.swift */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		0421E8942623D18E0081097F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0421E8972623D8BB0081097F /* HomeNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavController.swift; sourceTree = "<group>"; };
+		508D04392647870E00A09AF6 /* GaleneModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GaleneModel.mlmodel; sourceTree = "<group>"; };
 		509079FF2644C5A20040C357 /* PictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
 		50F89F2526461001003641EE /* PreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreInfoViewController.swift; sourceTree = "<group>"; };
 		AB559A0D2628FC3000501532 /* RetosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetosTableViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 		AB8030E226228A04009B97F5 /* GaleneApp */ = {
 			isa = PBXGroup;
 			children = (
+				508D04392647870E00A09AF6 /* GaleneModel.mlmodel */,
 				B021BF022627D14000D0F972 /* HistorialTableViewController.swift */,
 				AB8030E326228A04009B97F5 /* AppDelegate.swift */,
 				AB8030E526228A04009B97F5 /* SceneDelegate.swift */,
@@ -169,6 +172,7 @@
 				B021BF002627C8BF00D0F972 /* DiagnosisViewController.swift in Sources */,
 				0421E8982623D8BB0081097F /* HomeNavController.swift in Sources */,
 				AB559A0E2628FC3000501532 /* RetosTableViewController.swift in Sources */,
+				508D043A2647870E00A09AF6 /* GaleneModel.mlmodel in Sources */,
 				AB8030E626228A04009B97F5 /* SceneDelegate.swift in Sources */,
 				0421E8952623D18E0081097F /* HomeViewController.swift in Sources */,
 				50907A002644C5A20040C357 /* PictureViewController.swift in Sources */,
