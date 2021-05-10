@@ -1398,15 +1398,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDu-oN-401">
-                                <rect key="frame" x="119" y="522" width="136" height="39"/>
+                                <rect key="frame" x="204" y="522" width="136" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.42178148030000001" green="0.2636986301" blue="0.64041095889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Aceptar">
+                                <state key="normal" title="Tomar foto">
                                     <color key="titleColor" red="0.80392156859999997" green="0.79215686269999996" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="didTapButton:" destination="xvV-Kl-hQR" eventType="touchUpInside" id="QKP-xw-hlk"/>
+                                    <action selector="selectCameraPhoto:" destination="xvV-Kl-hQR" eventType="touchUpInside" id="n61-YK-2YF"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A continuación te pediremos que tomes una foto a algo cercano a ti que te guste o que se relacione con algo que te gusta." lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0O-Ex-Z6p">
@@ -1419,25 +1419,15 @@
                                 <rect key="frame" x="67" y="315" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IoG-Ki-8oM">
-                                <rect key="frame" x="286" y="522" width="73" height="39"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kn-Po-1kN">
+                                <rect key="frame" x="34" y="522" width="136" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.42178148030000001" green="0.2636986301" blue="0.64041095889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Omitir">
+                                <state key="normal" title="ALBUM">
                                     <color key="titleColor" red="0.80392156859999997" green="0.79215686269999996" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="skipToPreInfo:" destination="xvV-Kl-hQR" eventType="touchUpInside" id="vUn-PZ-wdC"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kn-Po-1kN">
-                                <rect key="frame" x="31" y="526" width="52" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="ALBUM">
-                                    <color key="titleColor" systemColor="labelColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="selectAlbumPhoto:" destination="xvV-Kl-hQR" eventType="touchUpInside" id="Q5f-01-vBV"/>
+                                    <action selector="selectAlbumPhoto:" destination="xvV-Kl-hQR" eventType="touchUpInside" id="HU2-5q-BTi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1446,8 +1436,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="zy5-bZ-CiB"/>
                     <connections>
-                        <outlet property="aceptarButton" destination="FDu-oN-401" id="Y5Y-6L-3NO"/>
-                        <outlet property="presentImage" destination="por-Xk-Nc7" id="n6k-dg-0zg"/>
+                        <outlet property="tomarButton" destination="FDu-oN-401" id="dEC-we-8dx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KeP-j1-Xye" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
