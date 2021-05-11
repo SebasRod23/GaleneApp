@@ -20,6 +20,10 @@ class RetosTableViewCell: UITableViewCell {
 
 class RetosTableViewController: UITableViewController {
     
+    struct MLData: Codable {
+        var MLString:String
+    }
+    
     let direccion="http://martinmolina.com.mx/202111/equipo3/data/retos.json"
     var currTag : String?
     var nuevoArray:[Any]?
@@ -28,17 +32,41 @@ class RetosTableViewController: UITableViewController {
             super.viewDidLoad()
             
             tableView.delegate = self
-            print(currTag!)
             
             if let url = URL(string: direccion) {
-                print(url)
+                //print(url)
                 let datosCrudos = try? Data(contentsOf: url)
                 nuevoArray = try! JSONSerialization.jsonObject(with: datosCrudos!) as? [Any]
+                let firstElem = nuevoArray![0] as! [String: Any]
+                let s1:String = String(firstElem["descripcion"] as! String)
+                print(s1)
+                let filtered = nuevoArray!.filter {
+                    let elem = ($0 as! [String: Any])
+                    //let str:String = elem["id"] as! String
+                    return true
+                }
+                //print(filtered)
             } else {
                 // the URL was bad!
                 print("the URL was bad!")
             }
         }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //guard
+        if let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString?,
+        let sourcePath = documentsPath.appendingPathComponent("MLData.plist") as NSString?,
+        let dictionary = NSDictionary(contentsOfFile: sourcePath as String) {
+            //print("dict: \(dictionary)")
+            self.currTag = dictionary["MLString"] as? String
+            //print(self.currTag!)
+        }
+        else {
+            self.currTag = "NA"
+            //print(self.currTag!)
+        }
+        
+    }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 162
@@ -67,7 +95,7 @@ class RetosTableViewController: UITableViewController {
                 
             }
             let objeto = nuevoArray![indexPath.row] as! [String: Any]
-            print(objeto)
+            //print(objeto)
             let s1:String = String(objeto["descripcion"] as! String)
           
 
@@ -81,7 +109,7 @@ class RetosTableViewController: UITableViewController {
     @objc
     func goToCongrats(sender: UIButton){
         let rowIndex: Int = sender.tag
-        print(rowIndex)
+        //print(rowIndex)
         //let sigVista = RetoTerminadoViewController()
         let sigVista = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RetoTerminadoViewController") as! RetoTerminadoViewController
         let objeto = nuevoArray![rowIndex] as! [String: Any]

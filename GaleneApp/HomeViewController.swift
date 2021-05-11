@@ -23,6 +23,8 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         snButton.layer.cornerRadius = 10
         historialButton.layer.cornerRadius = 10
         picker.delegate = self
+        tempTagRetos = ""
+        
         
         
         // Do any additional setup after loading the view.
@@ -46,7 +48,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        // self.tempTagRetos
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
