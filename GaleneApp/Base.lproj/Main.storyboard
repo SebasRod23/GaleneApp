@@ -251,7 +251,7 @@
                                     <color key="titleColor" red="0.80392156859999997" green="0.79215686269999996" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cTs-G8-GGI" kind="show" id="xhT-Xs-2GF"/>
+                                    <segue destination="cTs-G8-GGI" kind="show" identifier="toDiagnosisViewController" id="xhT-Xs-2GF"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ctV-SL-MFh">
@@ -290,6 +290,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="oOe-C9-Yge"/>
                     <connections>
+                        <outlet property="answerML" destination="k1y-Us-QBp" id="xwh-z6-E8R"/>
                         <outlet property="imageInpML" destination="ctV-SL-MFh" id="FQk-4n-mR5"/>
                     </connections>
                 </viewController>
@@ -1368,11 +1369,11 @@
                                     <constraint firstAttribute="height" constant="40" id="yWv-Dm-F7R"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Aceptar">
+                                <state key="normal" title="Tomar Foto">
                                     <color key="titleColor" red="0.80392156859999997" green="0.79215686269999996" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="didTapButton:" destination="xvV-Kl-hQR" eventType="touchUpInside" id="QKP-xw-hlk"/>
+                                    <action selector="selectCameraPhoto:" destination="xvV-Kl-hQR" eventType="touchUpInside" id="sZg-TM-ghv"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A continuación te pediremos que tomes una foto a algo cercano a ti que te guste o que se relacione con algo que te gusta." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0O-Ex-Z6p">
@@ -1392,11 +1393,11 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IoG-Ki-8oM">
                                 <rect key="frame" x="286" y="522" width="73" height="40"/>
                                 <color key="backgroundColor" red="0.42178148030000001" green="0.2636986301" blue="0.64041095889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Omitir">
+                                <state key="normal" title="Album">
                                     <color key="titleColor" red="0.80392156859999997" green="0.79215686269999996" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="skipToPreInfo:" destination="xvV-Kl-hQR" eventType="touchUpInside" id="vUn-PZ-wdC"/>
+                                    <action selector="selectAlbumPhoto:" destination="xvV-Kl-hQR" eventType="touchUpInside" id="mRo-9L-Ffi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1422,7 +1423,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="zy5-bZ-CiB"/>
                     <connections>
-                        <outlet property="aceptarButton" destination="FDu-oN-401" id="Y5Y-6L-3NO"/>
+                        <outlet property="tomarButton" destination="FDu-oN-401" id="kfu-pF-tS3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KeP-j1-Xye" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

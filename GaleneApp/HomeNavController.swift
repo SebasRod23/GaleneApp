@@ -12,7 +12,6 @@ class HomeNavController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
-        
         // Do any additional setup after loading the view.
     }
 
