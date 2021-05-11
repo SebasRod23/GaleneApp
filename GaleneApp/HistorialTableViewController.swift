@@ -42,6 +42,7 @@ class HistorialTableViewController: UITableViewController, UISearchResultsUpdati
             // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
             // self.navigationItem.rightBarButtonItem = self.editButtonItem
             tableView.delegate = self
+            self.navigationController!.navigationBar.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
             
             if let url = URL(string: direccion) {
                 print(url)
