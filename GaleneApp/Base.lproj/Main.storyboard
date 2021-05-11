@@ -24,7 +24,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Wxr-EN-7ZJ" kind="show" id="kPI-4w-MFK"/>
+                                    <segue destination="Wxr-EN-7ZJ" kind="show" identifier="" id="kPI-4w-MFK"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="GRECIA GARCIA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ko3-Ym-1Vl">
@@ -276,7 +276,7 @@
                                     <color key="titleColor" red="0.80392156859999997" green="0.79215686269999996" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cTs-G8-GGI" kind="show" id="xhT-Xs-2GF"/>
+                                    <segue destination="cTs-G8-GGI" kind="show" identifier="toDiagnosisViewController" id="xhT-Xs-2GF"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ctV-SL-MFh">
@@ -407,7 +407,7 @@
         <!--Resultados-->
         <scene sceneID="zBE-eW-PlG">
             <objects>
-                <viewController title="Resultados" id="cTs-G8-GGI" customClass="DiagnosisViewController" customModule="GaleneApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DiagnosisViewController" title="Resultados" id="cTs-G8-GGI" customClass="DiagnosisViewController" customModule="GaleneApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IGm-L4-Gwv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

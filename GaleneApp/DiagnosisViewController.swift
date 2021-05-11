@@ -9,14 +9,18 @@ import UIKit
 
 class DiagnosisViewController: UIViewController {
 
+    var tagResult : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: true)
-
-
+        print(tagResult!)
+        
     }
     
     @IBAction func backToHome(_ sender: UIButton) {
+        let homeView = navigationController?.viewControllers.first as! HomeViewController
+        homeView.tempTagRetos = tagResult
         _ = navigationController?.popToRootViewController(animated: true)
     }
     

@@ -75,7 +75,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate,
                 bestPrediction = classification.identifier
             }
         }
-        let resultStrML = "Hemos detectado: " + bestPrediction
+        let resultStrML = bestPrediction
         
         let nextView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PreInfoViewController") as! PreInfoViewController
         nextView.inputImage = imageToML
