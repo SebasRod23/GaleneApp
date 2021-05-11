@@ -22,6 +22,7 @@
 		ABDDE8FD262942D900AD550D /* RetoTerminadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDDE8FC262942D900AD550D /* RetoTerminadoViewController.swift */; };
 		B021BF002627C8BF00D0F972 /* DiagnosisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B021BEFF2627C8BF00D0F972 /* DiagnosisViewController.swift */; };
 		B021BF032627D14000D0F972 /* HistorialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B021BF022627D14000D0F972 /* HistorialTableViewController.swift */; };
+		B0B167FD2648D17C00A65C75 /* PreguntasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B167FC2648D17C00A65C75 /* PreguntasViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		ABDDE8FC262942D900AD550D /* RetoTerminadoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetoTerminadoViewController.swift; sourceTree = "<group>"; };
 		B021BEFF2627C8BF00D0F972 /* DiagnosisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisViewController.swift; sourceTree = "<group>"; };
 		B021BF022627D14000D0F972 /* HistorialTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorialTableViewController.swift; sourceTree = "<group>"; };
+		B0B167FC2648D17C00A65C75 /* PreguntasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreguntasViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				AB8030E526228A04009B97F5 /* SceneDelegate.swift */,
 				AB8030E726228A04009B97F5 /* ViewController.swift */,
 				AB8030E926228A04009B97F5 /* Main.storyboard */,
+				B0B167FC2648D17C00A65C75 /* PreguntasViewController.swift */,
 				B021BEFF2627C8BF00D0F972 /* DiagnosisViewController.swift */,
 				0421E8972623D8BB0081097F /* HomeNavController.swift */,
 				0421E8942623D18E0081097F /* HomeViewController.swift */,
@@ -164,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0B167FD2648D17C00A65C75 /* PreguntasViewController.swift in Sources */,
 				50F89F2626461002003641EE /* PreInfoViewController.swift in Sources */,
 				AB8030E826228A04009B97F5 /* ViewController.swift in Sources */,
 				B021BF032627D14000D0F972 /* HistorialTableViewController.swift in Sources */,

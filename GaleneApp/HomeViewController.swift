@@ -23,6 +23,10 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         historialButton.layer.cornerRadius = 10
         picker.delegate = self
         
+        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController!.navigationBar.shadowImage = UIImage()
+        self.navigationController!.navigationBar.isTranslucent = true
+        self.navigationController!.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         
         // Do any additional setup after loading the view.
