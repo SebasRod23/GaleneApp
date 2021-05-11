@@ -22,8 +22,6 @@ class DiagnosisViewController: UIViewController {
     }
     
     @IBAction func backToHome(_ sender: UIButton) {
-        let homeView = navigationController?.viewControllers.first as! HomeViewController
-        homeView.tempTagRetos = tagResult
         let mlData = MLData(MLString: tagResult!)
         
         let encoder = PropertyListEncoder()
@@ -38,7 +36,6 @@ class DiagnosisViewController: UIViewController {
             print(error)
         }
         
-        //Bundle.main.infoDictionary?.updateValue(tagResult, forKey: "MLString")
         _ = navigationController?.popToRootViewController(animated: true)
     }
     
