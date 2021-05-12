@@ -105,7 +105,7 @@ class RetosTableViewController: UITableViewController {
         let nextView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RetoTerminadoViewController") as! RetoTerminadoViewController
         let retoInfo = self.filteredData![rowIndex] as! [String: Any]
         let strInfo: String = retoInfo["descripcion"] as! String
-        nextView.retoTerminado = strInfo
+        nextView.retoInp = strInfo
         self.navigationController?.pushViewController(nextView, animated: true)
     }
 

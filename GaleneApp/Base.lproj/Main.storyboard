@@ -1269,7 +1269,7 @@
         <scene sceneID="SEG-Re-TkX">
             <objects>
                 <viewController storyboardIdentifier="RetoTerminadoViewController" id="r9y-tx-YpP" customClass="RetoTerminadoViewController" customModule="GaleneApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="rrh-M8-hA8" customClass="RetoTermina">
+                    <view key="view" contentMode="scaleToFill" id="rrh-M8-hA8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
