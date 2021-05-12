@@ -1269,7 +1269,7 @@
         <scene sceneID="SEG-Re-TkX">
             <objects>
                 <viewController storyboardIdentifier="RetoTerminadoViewController" id="r9y-tx-YpP" customClass="RetoTerminadoViewController" customModule="GaleneApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="rrh-M8-hA8" customClass="RetoTermina">
+                    <view key="view" contentMode="scaleToFill" id="rrh-M8-hA8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1386,7 +1386,7 @@
                                     <color key="titleColor" red="0.80392156859999997" green="0.79215686269999996" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="selectCameraPhoto:" destination="xvV-Kl-hQR" eventType="touchUpInside" id="sZg-TM-ghv"/>
+                                    <action selector="selectCameraPhoto:" destination="xvV-Kl-hQR" eventType="touchUpInside" id="5ms-1s-cnn"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A continuación te pediremos que tomes una foto a algo cercano a ti que te guste o que se relacione con algo que te gusta." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0O-Ex-Z6p">
@@ -1435,9 +1435,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zy5-bZ-CiB"/>
-                    <connections>
-                        <outlet property="tomarButton" destination="FDu-oN-401" id="kfu-pF-tS3"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KeP-j1-Xye" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
