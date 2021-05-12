@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import HealthKit
 class RetosTableViewCell: UITableViewCell {
     
     @IBOutlet weak var iconLabel: UIImageView!
@@ -27,11 +27,14 @@ class RetosTableViewController: UITableViewController {
     let direccion="http://martinmolina.com.mx/202111/equipo3/data/retos.json"
     var currTag : String?
     var nuevoArray:[Any]?
+    private var healthStore : Healthstore?
+    private var count: Int? = 0
     
         override func viewDidLoad() {
             super.viewDidLoad()
             
             tableView.delegate = self
+            healthStore = Healthstore()
             
             if let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString?,
             let sourcePath = documentsPath.appendingPathComponent("MLData.plist") as NSString?,
@@ -52,11 +55,36 @@ class RetosTableViewController: UITableViewController {
                     let tags = elem["tags"] as! [String]
                     return tags.contains(self.currTag!)
                 }
+                
             } else {
                 // the URL was bad!
                 print("the URL was bad!")
             }
+            
+            if let healthStore = healthStore{
+                healthStore.requestAuthorization { success in
+                    if success{
+                        healthStore.calcularPasos{
+                            statisticsCollection in if let statisticsCollection = statisticsCollection{
+                                self.updateUIFromStatistics(statisticsCollection)
+                            }
+                        }
+                    }
+                }
+            }
         }
+    
+    private func updateUIFromStatistics(_ statisticsCollection: HKStatisticsCollection){
+        let startDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())!
+        let endDate = Date()
+
+        statisticsCollection.enumerateStatistics(from:    startDate, to: endDate){ (statistics,
+            stop) in
+            let steps = statistics.sumQuantity()?.doubleValue(for: .count())
+            self.count = Int(steps ?? 0)
+        }
+        print(self.count!)
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         //guard
@@ -72,7 +100,6 @@ class RetosTableViewController: UITableViewController {
         
         
     }
-
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 162
     }
@@ -102,8 +129,11 @@ class RetosTableViewController: UITableViewController {
             let objeto = nuevoArray![indexPath.row] as! [String: Any]
             let s1:String = String(objeto["descripcion"] as! String)
           
-
-            cell.retoLabel?.text=s1//ACTUALIZAR JSON
+        let secondsToDelay = 1.0
+        DispatchQueue.main.asyncAfter(deadline: .now() + secondsToDelay) {
+            cell.retoLabel?.text=String(self.count!)
+        }
+        
         cell.completadoButton.tag = indexPath.row
         cell.completadoButton.addTarget(self, action: #selector(goToCongrats(sender:)), for: .touchUpInside)
         
