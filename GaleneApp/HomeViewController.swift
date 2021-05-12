@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import HealthKit
 
 class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -14,6 +15,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var historialButton: UIButton!
     @IBOutlet weak var profileImage: UIImageView!
     private let picker = UIImagePickerController()
+    private var healthStore : Healthstore?
 
     override func viewDidLoad() {
 
@@ -28,10 +30,17 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         self.navigationController!.navigationBar.isTranslucent = true
         self.navigationController!.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
+        healthStore = Healthstore()
         
         // Do any additional setup after loading the view.
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        if let healthStore = healthStore{
+            healthStore.requestAuthorization { success in
+                
+            }
+        }
+    }
     @IBAction func changeProfileImage(_ sender: UIButton) {
         picker.sourceType = UIImagePickerController.SourceType.photoLibrary
         present(picker, animated: true, completion: nil)

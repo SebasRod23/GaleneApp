@@ -16,7 +16,8 @@ class PreInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         imageInpML.image = inputImage
-        answerML.text = "Hemos detectado: " + inputAnswerML!
+        print(answerML.text!)
+        answerML.text! = "Hemos detectado: " + inputAnswerML!
         // Do any additional setup after loading the view.
     }
     
