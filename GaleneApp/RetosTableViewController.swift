@@ -59,7 +59,6 @@ class RetosTableViewController: UITableViewController {
         }
     
     override func viewDidAppear(_ animated: Bool) {
-        //guard
         if let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString?,
         let sourcePath = documentsPath.appendingPathComponent("MLData.plist") as NSString?,
         let dictionary = NSDictionary(contentsOfFile: sourcePath as String) {
