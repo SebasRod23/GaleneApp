@@ -12,15 +12,11 @@ import Vision
 class PictureViewController: UIViewController, UIImagePickerControllerDelegate,
                              UINavigationControllerDelegate {
     
-    var imageToML : UIImage?
-    @IBOutlet weak var tomarButton: UIButton!
+    var imageToML: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-    
 
     @IBAction func selectCameraPhoto(_ sender: UIButton) {
         let picker = UIImagePickerController()
@@ -28,7 +24,6 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate,
         picker.delegate = self
         present(picker, animated: true)
     }
-    
     
     @IBAction func selectAlbumPhoto(_ sender: UIButton) {
         let picker = UIImagePickerController()
@@ -38,8 +33,16 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
         picker.dismiss(animated: true, completion: nil)
+        let imageInp = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        self.loadModel(image: imageInp!)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func loadModel(image : UIImage) {
         let modelFile: GaleneModel = {
         do {
             let config = MLModelConfiguration()
@@ -49,47 +52,29 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate,
             fatalError("Couldn't create modelML")
         }
         }()
-        imageToML = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        self.imageToML = image
         let model = try! VNCoreMLModel(for: modelFile.model)
-        let imagenCI = CIImage(image: imageToML!)
+        let imagenCI = CIImage(image: self.imageToML!)
         let handler = VNImageRequestHandler(ciImage: imagenCI!)
         let request = VNCoreMLRequest(model: model, completionHandler: modelResult)
         try! handler.perform([request])
-        picker.dismiss(animated: true, completion: nil)
-        
     }
     
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
-    func modelResult(request: VNRequest, error: Error?)
-    {
+    func modelResult(request: VNRequest, error: Error?) {
         guard let results = request.results as? [VNClassificationObservation] else { fatalError("No hubo respuesta del modelo ML")}
         var bestPrediction = ""
         var bestConfidence: VNConfidence = 0
-        //recorrer todas las respuestas en búsqueda del mejor resultado
         for classification in results{
             if (classification.confidence > bestConfidence){
                 bestConfidence = classification.confidence
                 bestPrediction = classification.identifier
             }
         }
-        let resultStrML = bestPrediction
         
         let nextView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PreInfoViewController") as! PreInfoViewController
-        nextView.inputImage = imageToML
-        nextView.inputAnswerML = resultStrML
+        nextView.inputImage = self.imageToML
+        nextView.inputAnswerML = bestPrediction
         self.navigationController?.pushViewController(nextView, animated: true)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
