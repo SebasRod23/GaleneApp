@@ -177,6 +177,7 @@
                                         <constraint firstItem="4OT-GR-NeD" firstAttribute="top" secondItem="DIw-DN-AeL" secondAttribute="bottom" constant="8" id="mtA-qj-izq"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.43185785409999999" green="0.72757607700000004" blue="0.64262902740000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dateLabel" destination="4OT-GR-NeD" id="Z0v-T9-bLS"/>
                                     <outlet property="statusLabel" destination="DIw-DN-AeL" id="FTm-16-fJ6"/>
@@ -306,13 +307,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sobreNosotros" translatesAutoresizingMaskIntoConstraints="NO" id="45e-i5-FDC">
-                                <rect key="frame" x="-168" y="0.0" width="686" height="812"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SOBRE NOSOTROS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hL-uE-lUm">
+                                <rect key="frame" x="92" y="85" width="207" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="375" id="3Yu-eC-ko1"/>
+                                    <constraint firstAttribute="width" constant="375" id="6Bl-aL-MDJ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="207" id="IWf-N8-c9d"/>
+                                    <constraint firstAttribute="height" constant="21" id="QDf-63-NDj"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="Vz1-sS-2O2"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="21" id="gRx-HB-Ya3"/>
+                                    <constraint firstAttribute="width" secondItem="2hL-uE-lUm" secondAttribute="height" multiplier="69:7" id="mAL-s8-HYZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coi-lN-YdK">
+                                <rect key="frame" x="11.967244701349045" y="356" width="348.99999999999977" height="224.00000000000045"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="376" id="I9C-RB-V6I"/>
+                                    <constraint firstAttribute="height" constant="224" id="t0w-at-8bU"/>
+                                </constraints>
+                                <string key="text">Application developed at Tecnológico de Monterrey Campus Mexico City in the subject Proyecto de Desarrollo de Aplicaciones Móviles, semester 6  by students -Arturo Efrén Jimenéz Garibaldi -Georgina Alejandra Gámez Melgar -Juan Sebastian Rodríguez Galarza -Javier Mendieta Flores Teacher Dr. José Martin Molina Espinosa  </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hym-TV-upe">
+                                <rect key="frame" x="40" y="172" width="310" height="163"/>
+                                <color key="backgroundColor" red="0.98385530710000002" green="0.62299895289999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="326" id="MkI-jz-P4k"/>
+                                    <constraint firstAttribute="height" constant="163" id="U2H-G2-93v"/>
+                                </constraints>
+                                <string key="text">Galene busca ayudar a las personas que padecen ansiedad y que están buscando ayuda. Nuestro objetivo es otorgarles herramientas necesarias para buscar ayuda profesional. Además que proponemos una serie de retos para aliviar el estrés</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="¿QUÉ ES GALENE?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5A-fM-WWq">
+                                <rect key="frame" x="0.0" y="122" width="375" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="MAW-Ug-csN"/>
+                                    <constraint firstAttribute="height" constant="22" id="OEz-K2-iuP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uFs-kw-KEt"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.43185785409999999" green="0.72757607700000004" blue="0.64262902740000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2hL-uE-lUm" firstAttribute="leading" secondItem="Hym-TV-upe" secondAttribute="leading" constant="-56" id="Gdi-ub-ctt"/>
+                            <constraint firstItem="coi-lN-YdK" firstAttribute="centerX" secondItem="usk-Q5-eV8" secondAttribute="centerX" constant="-1.0327552986510682" id="QjN-dq-tDl"/>
+                            <constraint firstItem="2hL-uE-lUm" firstAttribute="top" secondItem="uFs-kw-KEt" secondAttribute="top" constant="31" id="W6M-Jd-vzn"/>
+                            <constraint firstItem="R5A-fM-WWq" firstAttribute="top" secondItem="2hL-uE-lUm" secondAttribute="bottom" constant="34" id="alL-NX-mcq"/>
+                            <constraint firstItem="2hL-uE-lUm" firstAttribute="leading" secondItem="R5A-fM-WWq" secondAttribute="leading" constant="-16" id="bkG-g0-UTd"/>
+                            <constraint firstItem="coi-lN-YdK" firstAttribute="top" secondItem="Hym-TV-upe" secondAttribute="bottom" constant="21" id="eYf-0E-UOb"/>
+                            <constraint firstItem="2hL-uE-lUm" firstAttribute="trailing" secondItem="usk-Q5-eV8" secondAttribute="trailingMargin" id="vS1-yk-vrw"/>
+                            <constraint firstItem="Hym-TV-upe" firstAttribute="top" secondItem="R5A-fM-WWq" secondAttribute="bottom" constant="8" id="xi9-VL-eja"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jGG-jr-Jkr"/>
                 </viewController>
@@ -1522,7 +1577,6 @@
         <image name="map" catalog="system" width="128" height="110"/>
         <image name="photo-pic" width="491.5" height="295"/>
         <image name="pngwing.com" width="293.5" height="417"/>
-        <image name="sobreNosotros" width="113" height="334"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
