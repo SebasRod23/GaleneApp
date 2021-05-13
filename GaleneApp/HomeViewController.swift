@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import HealthKit
 
 class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -23,6 +24,13 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         historialButton.layer.cornerRadius = 10
         picker.delegate = self
         
+        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController!.navigationBar.shadowImage = UIImage()
+        self.navigationController!.navigationBar.isTranslucent = true
+        self.navigationController!.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
+        
+        
         // Do any additional setup after loading the view.
     }
     
@@ -39,7 +47,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -47,6 +55,6 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }

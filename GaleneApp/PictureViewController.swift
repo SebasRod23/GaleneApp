@@ -6,62 +6,75 @@
 //
 
 import UIKit
+import CoreML
+import Vision
 
-class PictureViewController: UIViewController {
-
-    @IBOutlet weak var aceptarButton: UIButton!
+class PictureViewController: UIViewController, UIImagePickerControllerDelegate,
+                             UINavigationControllerDelegate {
+    
+    var imageToML: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-    
 
-    @IBAction func didTapButton(_ sender: UIButton) {
+    @IBAction func selectCameraPhoto(_ sender: UIButton) {
         let picker = UIImagePickerController()
-        picker.sourceType = .camera
-        picker.allowsEditing = true
+        picker.sourceType = UIImagePickerController.SourceType.camera
         picker.delegate = self
         present(picker, animated: true)
     }
     
-    @IBAction func skipToPreInfo(_ sender: UIButton) {
-        let nextView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PreInfoViewController") as! PreInfoViewController
-        self.navigationController?.pushViewController(nextView, animated: true)
-        
+    @IBAction func selectAlbumPhoto(_ sender: UIButton) {
+        let picker = UIImagePickerController()
+        picker.sourceType = UIImagePickerController.SourceType.photoLibrary
+        picker.delegate = self
+        present(picker, animated: true, completion: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        let imageInp = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        self.loadModel(image: imageInp!)
     }
-    */
-    
-    
-
-}
-
-extension PictureViewController : UIImagePickerControllerDelegate,
-                                  UINavigationControllerDelegate {
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
-            return
+    func loadModel(image : UIImage) {
+        let modelFile: GaleneModel = {
+        do {
+            let config = MLModelConfiguration()
+            return try GaleneModel(configuration: config)
+        } catch {
+            print(error)
+            fatalError("Couldn't create modelML")
         }
-        //imageView.image = image
-        let nextView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PreInfoViewController") as! PreInfoViewController
-        nextView.inputImage = image
-        self.navigationController?.pushViewController(nextView, animated: true)
-        picker.dismiss(animated: true, completion: nil)
+        }()
+        self.imageToML = image
+        let model = try! VNCoreMLModel(for: modelFile.model)
+        let imagenCI = CIImage(image: self.imageToML!)
+        let handler = VNImageRequestHandler(ciImage: imagenCI!)
+        let request = VNCoreMLRequest(model: model, completionHandler: modelResult)
+        try! handler.perform([request])
+    }
+    
+    func modelResult(request: VNRequest, error: Error?) {
+        guard let results = request.results as? [VNClassificationObservation] else { fatalError("No hubo respuesta del modelo ML")}
+        var bestPrediction = ""
+        var bestConfidence: VNConfidence = 0
+        for classification in results{
+            if (classification.confidence > bestConfidence){
+                bestConfidence = classification.confidence
+                bestPrediction = classification.identifier
+            }
+        }
         
+        let nextView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PreInfoViewController") as! PreInfoViewController
+        nextView.inputImage = self.imageToML
+        nextView.inputAnswerML = bestPrediction
+        self.navigationController?.pushViewController(nextView, animated: true)
     }
     
 }

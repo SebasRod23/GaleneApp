@@ -10,22 +10,22 @@ import UIKit
 class PreInfoViewController: UIViewController {
     
     @IBOutlet weak var imageInpML: UIImageView!
+    @IBOutlet weak var answerML: UILabel!
     var inputImage: UIImage?
+    var inputAnswerML: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageInpML.image = inputImage
-        // Do any additional setup after loading the view.
+        self.imageInpML.image = self.inputImage
+        self.answerML.text = "Hemos detectado: " + self.inputAnswerML!
     }
     
-
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == "toDiagnosisViewController") {
+            let diagnosisView = (segue.destination as! DiagnosisViewController)
+            diagnosisView.tagResult = self.inputAnswerML!
+        }
     }
-    */
-
+    
 }

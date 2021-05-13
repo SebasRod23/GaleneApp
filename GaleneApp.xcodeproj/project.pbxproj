@@ -9,8 +9,11 @@
 /* Begin PBXBuildFile section */
 		0421E8952623D18E0081097F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421E8942623D18E0081097F /* HomeViewController.swift */; };
 		0421E8982623D8BB0081097F /* HomeNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421E8972623D8BB0081097F /* HomeNavController.swift */; };
+		508D043A2647870E00A09AF6 /* GaleneModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 508D04392647870E00A09AF6 /* GaleneModel.mlmodel */; };
 		50907A002644C5A20040C357 /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509079FF2644C5A20040C357 /* PictureViewController.swift */; };
 		50F89F2626461002003641EE /* PreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F89F2526461001003641EE /* PreInfoViewController.swift */; };
+		AB154A952649FF2E008DEC4B /* MapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB154A942649FF2E008DEC4B /* MapaViewController.swift */; };
+		AB45E070264AF75F00F73C5A /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB45E06F264AF75F00F73C5A /* Annotation.swift */; };
 		AB559A0E2628FC3000501532 /* RetosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB559A0D2628FC3000501532 /* RetosTableViewController.swift */; };
 		AB8030E426228A04009B97F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8030E326228A04009B97F5 /* AppDelegate.swift */; };
 		AB8030E626228A04009B97F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8030E526228A04009B97F5 /* SceneDelegate.swift */; };
@@ -18,16 +21,23 @@
 		AB8030EB26228A04009B97F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB8030E926228A04009B97F5 /* Main.storyboard */; };
 		AB8030ED26228A05009B97F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB8030EC26228A05009B97F5 /* Assets.xcassets */; };
 		AB8030F026228A05009B97F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB8030EE26228A05009B97F5 /* LaunchScreen.storyboard */; };
+		ABAA2361264B21430044901C /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAA2360264B21430044901C /* Properties.swift */; };
 		ABDDE8FD262942D900AD550D /* RetoTerminadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDDE8FC262942D900AD550D /* RetoTerminadoViewController.swift */; };
 		B021BF002627C8BF00D0F972 /* DiagnosisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B021BEFF2627C8BF00D0F972 /* DiagnosisViewController.swift */; };
 		B021BF032627D14000D0F972 /* HistorialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B021BF022627D14000D0F972 /* HistorialTableViewController.swift */; };
+		B0B167FD2648D17C00A65C75 /* PreguntasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B167FC2648D17C00A65C75 /* PreguntasViewController.swift */; };
+		B0B44E91264C499D00AF94FD /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B44E90264C499D00AF94FD /* HealthStore.swift */; };
+		B0B44E96264C4E8000AF94FD /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0B44E95264C4E8000AF94FD /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0421E8942623D18E0081097F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0421E8972623D8BB0081097F /* HomeNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavController.swift; sourceTree = "<group>"; };
+		508D04392647870E00A09AF6 /* GaleneModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GaleneModel.mlmodel; sourceTree = "<group>"; };
 		509079FF2644C5A20040C357 /* PictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
 		50F89F2526461001003641EE /* PreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreInfoViewController.swift; sourceTree = "<group>"; };
+		AB154A942649FF2E008DEC4B /* MapaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaViewController.swift; sourceTree = "<group>"; };
+		AB45E06F264AF75F00F73C5A /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 		AB559A0D2628FC3000501532 /* RetosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetosTableViewController.swift; sourceTree = "<group>"; };
 		AB8030E026228A04009B97F5 /* GaleneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GaleneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB8030E326228A04009B97F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,9 +47,14 @@
 		AB8030EC26228A05009B97F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB8030EF26228A05009B97F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB8030F126228A05009B97F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABAA2360264B21430044901C /* Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
 		ABDDE8FC262942D900AD550D /* RetoTerminadoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetoTerminadoViewController.swift; sourceTree = "<group>"; };
 		B021BEFF2627C8BF00D0F972 /* DiagnosisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisViewController.swift; sourceTree = "<group>"; };
 		B021BF022627D14000D0F972 /* HistorialTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorialTableViewController.swift; sourceTree = "<group>"; };
+		B0B167FC2648D17C00A65C75 /* PreguntasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreguntasViewController.swift; sourceTree = "<group>"; };
+		B0B44E90264C499D00AF94FD /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
+		B0B44E93264C4E8000AF94FD /* GaleneApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GaleneApp.entitlements; sourceTree = "<group>"; };
+		B0B44E95264C4E8000AF94FD /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0B44E96264C4E8000AF94FD /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +74,7 @@
 			children = (
 				AB8030E226228A04009B97F5 /* GaleneApp */,
 				AB8030E126228A04009B97F5 /* Products */,
+				B0B44E94264C4E8000AF94FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,14 +89,18 @@
 		AB8030E226228A04009B97F5 /* GaleneApp */ = {
 			isa = PBXGroup;
 			children = (
+				B0B44E93264C4E8000AF94FD /* GaleneApp.entitlements */,
+				508D04392647870E00A09AF6 /* GaleneModel.mlmodel */,
 				B021BF022627D14000D0F972 /* HistorialTableViewController.swift */,
 				AB8030E326228A04009B97F5 /* AppDelegate.swift */,
 				AB8030E526228A04009B97F5 /* SceneDelegate.swift */,
 				AB8030E726228A04009B97F5 /* ViewController.swift */,
 				AB8030E926228A04009B97F5 /* Main.storyboard */,
+				B0B167FC2648D17C00A65C75 /* PreguntasViewController.swift */,
 				B021BEFF2627C8BF00D0F972 /* DiagnosisViewController.swift */,
 				0421E8972623D8BB0081097F /* HomeNavController.swift */,
 				0421E8942623D18E0081097F /* HomeViewController.swift */,
+				B0B44E90264C499D00AF94FD /* HealthStore.swift */,
 				AB8030EC26228A05009B97F5 /* Assets.xcassets */,
 				AB8030EE26228A05009B97F5 /* LaunchScreen.storyboard */,
 				AB8030F126228A05009B97F5 /* Info.plist */,
@@ -87,8 +108,19 @@
 				ABDDE8FC262942D900AD550D /* RetoTerminadoViewController.swift */,
 				509079FF2644C5A20040C357 /* PictureViewController.swift */,
 				50F89F2526461001003641EE /* PreInfoViewController.swift */,
+				AB154A942649FF2E008DEC4B /* MapaViewController.swift */,
+				AB45E06F264AF75F00F73C5A /* Annotation.swift */,
+				ABAA2360264B21430044901C /* Properties.swift */,
 			);
 			path = GaleneApp;
+			sourceTree = "<group>";
+		};
+		B0B44E94264C4E8000AF94FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B0B44E95264C4E8000AF94FD /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,14 +193,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0B167FD2648D17C00A65C75 /* PreguntasViewController.swift in Sources */,
 				50F89F2626461002003641EE /* PreInfoViewController.swift in Sources */,
+				AB154A952649FF2E008DEC4B /* MapaViewController.swift in Sources */,
 				AB8030E826228A04009B97F5 /* ViewController.swift in Sources */,
 				B021BF032627D14000D0F972 /* HistorialTableViewController.swift in Sources */,
+				AB45E070264AF75F00F73C5A /* Annotation.swift in Sources */,
+				B0B44E91264C499D00AF94FD /* HealthStore.swift in Sources */,
 				AB8030E426228A04009B97F5 /* AppDelegate.swift in Sources */,
+				ABAA2361264B21430044901C /* Properties.swift in Sources */,
 				ABDDE8FD262942D900AD550D /* RetoTerminadoViewController.swift in Sources */,
 				B021BF002627C8BF00D0F972 /* DiagnosisViewController.swift in Sources */,
 				0421E8982623D8BB0081097F /* HomeNavController.swift in Sources */,
 				AB559A0E2628FC3000501532 /* RetosTableViewController.swift in Sources */,
+				508D043A2647870E00A09AF6 /* GaleneModel.mlmodel in Sources */,
 				AB8030E626228A04009B97F5 /* SceneDelegate.swift in Sources */,
 				0421E8952623D18E0081097F /* HomeViewController.swift in Sources */,
 				50907A002644C5A20040C357 /* PictureViewController.swift in Sources */,
@@ -318,6 +356,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GaleneApp/GaleneApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = GaleneApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -336,6 +375,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GaleneApp/GaleneApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = GaleneApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
