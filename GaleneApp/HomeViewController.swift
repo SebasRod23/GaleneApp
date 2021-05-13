@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import HealthKit
 
 class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -27,6 +28,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         self.navigationController!.navigationBar.shadowImage = UIImage()
         self.navigationController!.navigationBar.isTranslucent = true
         self.navigationController!.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
         
         
         // Do any additional setup after loading the view.

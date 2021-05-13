@@ -4,13 +4,15 @@
 //
 //  Created by user190842 on 4/14/21.
 //
-
 import UIKit
+import HealthKit
 
 class RetosTableViewCell: UITableViewCell {
     @IBOutlet weak var iconLabel: UIImageView!
     @IBOutlet weak var retoLabel: UILabel!
     @IBOutlet weak var completadoButton: UIButton!
+    @IBOutlet weak var progressLabel: UILabel!
+    
     @IBAction func completadoFunc(_ sender: Any) {
     }
 }
@@ -26,18 +28,28 @@ class RetosTableViewController: UITableViewController {
     var data: [Any]?
     var filteredData: [Any]?
     
+    private var healthStore : Healthstore?
+    private var count: Int? = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
+        healthStore=Healthstore()
         self.fetchDataURL()
         self.loadMLData()
         self.filterDataArray()
+        if(currTag=="tenis" || currTag=="balon"){
+            self.getPasos()
+        }
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         self.loadMLData()
         self.filterDataArray()
         tableView.reloadData()
+        
     }
     
     func filterDataArray() {
@@ -67,10 +79,35 @@ class RetosTableViewController: UITableViewController {
             print("Error loading data from URL!")
         }
     }
+    
+    func getPasos(){
+        if let healthStore = healthStore{
+            healthStore.requestAuthorization { success in
+                if success{
+                    healthStore.calcularPasos{
+                        statisticsCollection in if let statisticsCollection = statisticsCollection{
+                            self.updateUIFromStatistics(statisticsCollection)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    private func updateUIFromStatistics(_ statisticsCollection: HKStatisticsCollection){
+            let startDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())!
+            let endDate = Date()
 
+            statisticsCollection.enumerateStatistics(from:    startDate, to: endDate){ (statistics,
+                stop) in
+                let steps = statistics.sumQuantity()?.doubleValue(for: .count())
+                self.count = Int(steps ?? 0)
+            }
+        }
+    
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 162
+        return 185
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -93,8 +130,23 @@ class RetosTableViewController: UITableViewController {
           
 
         cell.retoLabel?.text = strInfo
+        /*
+         let secondsToDelay = 5.0
+                DispatchQueue.main.asyncAfter(deadline: .now() + secondsToDelay) {
+                    print(self.count!)
+                }
+         */
+        cell.retoLabel?.text=strInfo
         cell.completadoButton.tag = indexPath.row
         cell.completadoButton.addTarget(self, action: #selector(goToCongrats(sender:)), for: .touchUpInside)
+        if(currTag=="tenis" || currTag=="balon"){
+            cell.progressLabel?.text=String(self.count!)+" pasos"
+            cell.progressLabel?.isHidden = false
+        } else{
+            cell.progressLabel?.text=""
+            cell.progressLabel?.isHidden = true
+        }
+        
         
         return cell
     }

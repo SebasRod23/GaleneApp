@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Esta aplicación requiere acceder a tus datos de salud</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Esta aplicación requiere acceder a tus datos de salud</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Permitir ver localizacion para ver centros mas cercanos</string>
 	<key>NSAppTransportSecurity</key>
