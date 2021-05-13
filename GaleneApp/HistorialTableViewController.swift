@@ -99,11 +99,11 @@ class HistorialTableViewController: UITableViewController, UISearchResultsUpdati
             cell.dateLabel?.text=s2
             switch s1 {
             case "Alto":
-                cell.backgroundColor = #colorLiteral(red: 0.03137254902, green: 0.2980392157, blue: 0.3803921569, alpha: 0.3767123287)
+                cell.backgroundColor = #colorLiteral(red: 0.431372549, green: 0.7333333333, blue: 0.6431372549, alpha: 0.5)
             case "Medio":
-                cell.backgroundColor = #colorLiteral(red: 0.09411764706, green: 0.5607843137, blue: 0.6549019608, alpha: 0.3183561644)
+                cell.backgroundColor = #colorLiteral(red: 0.6588235294, green: 0.8392156863, blue: 0.7843137255, alpha: 0.5)
             default:
-                cell.backgroundColor = #colorLiteral(red: 0.462745098, green: 0.6235294118, blue: 0.7137254902, alpha: 0.3493150684)
+                cell.backgroundColor = #colorLiteral(red: 0.862745098, green: 0.937254902, blue: 0.9137254902, alpha: 0.5)
             }
             return cell
         }
