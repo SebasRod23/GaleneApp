@@ -3,15 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0421E8952623D18E0081097F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421E8942623D18E0081097F /* HomeViewController.swift */; };
 		0421E8982623D8BB0081097F /* HomeNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421E8972623D8BB0081097F /* HomeNavController.swift */; };
+		263DFCED7A1916B85693F62B /* Pods_GaleneApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7810438B98D26C0C4FAA1A /* Pods_GaleneApp.framework */; };
 		508D043A2647870E00A09AF6 /* GaleneModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 508D04392647870E00A09AF6 /* GaleneModel.mlmodel */; };
 		50907A002644C5A20040C357 /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509079FF2644C5A20040C357 /* PictureViewController.swift */; };
 		50F89F2626461002003641EE /* PreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F89F2526461001003641EE /* PreInfoViewController.swift */; };
+		6C44750EFCD453320C2F9EFD /* Pods_GaleneWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E088C8259BAA02E217EC4941 /* Pods_GaleneWatch.framework */; };
+		9A05A192CC09B26077464326 /* Pods_GaleneWatch_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038A845E4729B9E24741464A /* Pods_GaleneWatch_WatchKit_App.framework */; };
+		AB01C754265E244C006F6DE8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB01C753265E244C006F6DE8 /* GoogleService-Info.plist */; };
+		AB01C775265E2818006F6DE8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB01C774265E2818006F6DE8 /* LoginViewController.swift */; };
+		AB01C77B265E293E006F6DE8 /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB01C77A265E293E006F6DE8 /* RegistroViewController.swift */; };
 		AB154A952649FF2E008DEC4B /* MapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB154A942649FF2E008DEC4B /* MapaViewController.swift */; };
 		AB45E070264AF75F00F73C5A /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB45E06F264AF75F00F73C5A /* Annotation.swift */; };
 		AB559A0E2628FC3000501532 /* RetosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB559A0D2628FC3000501532 /* RetosTableViewController.swift */; };
@@ -36,6 +42,7 @@
 		B0DBB98F2658299600762B8A /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DBB98E2658299600762B8A /* ExtensionDelegate.swift */; };
 		B0DBB9912658299600762B8A /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DBB9902658299600762B8A /* ComplicationController.swift */; };
 		B0DBB9932658299700762B8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0DBB9922658299700762B8A /* Assets.xcassets */; };
+		E3012B526A81C16EF79DC9FE /* Pods_GaleneWatch_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A107E619E064BC2A5C1C76 /* Pods_GaleneWatch_WatchKit_Extension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,11 +88,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		038A845E4729B9E24741464A /* Pods_GaleneWatch_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GaleneWatch_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0421E8942623D18E0081097F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0421E8972623D8BB0081097F /* HomeNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavController.swift; sourceTree = "<group>"; };
+		34DF694EDA21BCE651B0DA03 /* Pods-GaleneWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaleneWatch.release.xcconfig"; path = "Target Support Files/Pods-GaleneWatch/Pods-GaleneWatch.release.xcconfig"; sourceTree = "<group>"; };
+		3CA22BFFA3EE0A52EB0E1381 /* Pods-GaleneApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaleneApp.debug.xcconfig"; path = "Target Support Files/Pods-GaleneApp/Pods-GaleneApp.debug.xcconfig"; sourceTree = "<group>"; };
 		508D04392647870E00A09AF6 /* GaleneModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GaleneModel.mlmodel; sourceTree = "<group>"; };
 		509079FF2644C5A20040C357 /* PictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
 		50F89F2526461001003641EE /* PreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreInfoViewController.swift; sourceTree = "<group>"; };
+		53B5E948C3A5007A49978750 /* Pods-GaleneWatch WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaleneWatch WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-GaleneWatch WatchKit App/Pods-GaleneWatch WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		5F7810438B98D26C0C4FAA1A /* Pods_GaleneApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GaleneApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DE5AE90C17BB6BC9397981C /* Pods-GaleneWatch WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaleneWatch WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-GaleneWatch WatchKit Extension/Pods-GaleneWatch WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		AB01C753265E244C006F6DE8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AB01C774265E2818006F6DE8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AB01C77A265E293E006F6DE8 /* RegistroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
 		AB154A942649FF2E008DEC4B /* MapaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaViewController.swift; sourceTree = "<group>"; };
 		AB45E06F264AF75F00F73C5A /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 		AB559A0D2628FC3000501532 /* RetosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetosTableViewController.swift; sourceTree = "<group>"; };
@@ -116,14 +132,29 @@
 		B0DBB9902658299600762B8A /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		B0DBB9922658299700762B8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0DBB9942658299700762B8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3A107E619E064BC2A5C1C76 /* Pods_GaleneWatch_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GaleneWatch_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B76383EB491B1F2E7C2911EA /* Pods-GaleneWatch WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaleneWatch WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-GaleneWatch WatchKit Extension/Pods-GaleneWatch WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		DA58BB6EC95C0860CA0755F1 /* Pods-GaleneWatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaleneWatch.debug.xcconfig"; path = "Target Support Files/Pods-GaleneWatch/Pods-GaleneWatch.debug.xcconfig"; sourceTree = "<group>"; };
+		E088C8259BAA02E217EC4941 /* Pods_GaleneWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GaleneWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFABA291047B184E0C85FFE0 /* Pods-GaleneApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaleneApp.release.xcconfig"; path = "Target Support Files/Pods-GaleneApp/Pods-GaleneApp.release.xcconfig"; sourceTree = "<group>"; };
+		F8087834F6B34A730BF83DD3 /* Pods-GaleneWatch WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaleneWatch WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-GaleneWatch WatchKit App/Pods-GaleneWatch WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		10EDD3F38B9CAF7E8DA89C4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A05A192CC09B26077464326 /* Pods_GaleneWatch_WatchKit_App.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AB8030DD26228A04009B97F5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B0B44E96264C4E8000AF94FD /* HealthKit.framework in Frameworks */,
+				263DFCED7A1916B85693F62B /* Pods_GaleneApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +162,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3012B526A81C16EF79DC9FE /* Pods_GaleneWatch_WatchKit_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDF35C0CF2C865A4061CB69F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C44750EFCD453320C2F9EFD /* Pods_GaleneWatch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +185,7 @@
 				B0DBB98B2658299600762B8A /* GaleneWatch WatchKit Extension */,
 				AB8030E126228A04009B97F5 /* Products */,
 				B0B44E94264C4E8000AF94FD /* Frameworks */,
+				AC14C929378FC9A9B4EA9B8B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,6 +203,7 @@
 		AB8030E226228A04009B97F5 /* GaleneApp */ = {
 			isa = PBXGroup;
 			children = (
+				AB01C753265E244C006F6DE8 /* GoogleService-Info.plist */,
 				B0B44E93264C4E8000AF94FD /* GaleneApp.entitlements */,
 				508D04392647870E00A09AF6 /* GaleneModel.mlmodel */,
 				B021BF022627D14000D0F972 /* HistorialTableViewController.swift */,
@@ -184,14 +226,35 @@
 				AB154A942649FF2E008DEC4B /* MapaViewController.swift */,
 				AB45E06F264AF75F00F73C5A /* Annotation.swift */,
 				ABAA2360264B21430044901C /* Properties.swift */,
+				AB01C774265E2818006F6DE8 /* LoginViewController.swift */,
+				AB01C77A265E293E006F6DE8 /* RegistroViewController.swift */,
 			);
 			path = GaleneApp;
+			sourceTree = "<group>";
+		};
+		AC14C929378FC9A9B4EA9B8B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3CA22BFFA3EE0A52EB0E1381 /* Pods-GaleneApp.debug.xcconfig */,
+				EFABA291047B184E0C85FFE0 /* Pods-GaleneApp.release.xcconfig */,
+				DA58BB6EC95C0860CA0755F1 /* Pods-GaleneWatch.debug.xcconfig */,
+				34DF694EDA21BCE651B0DA03 /* Pods-GaleneWatch.release.xcconfig */,
+				F8087834F6B34A730BF83DD3 /* Pods-GaleneWatch WatchKit App.debug.xcconfig */,
+				53B5E948C3A5007A49978750 /* Pods-GaleneWatch WatchKit App.release.xcconfig */,
+				9DE5AE90C17BB6BC9397981C /* Pods-GaleneWatch WatchKit Extension.debug.xcconfig */,
+				B76383EB491B1F2E7C2911EA /* Pods-GaleneWatch WatchKit Extension.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		B0B44E94264C4E8000AF94FD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				B0B44E95264C4E8000AF94FD /* HealthKit.framework */,
+				5F7810438B98D26C0C4FAA1A /* Pods_GaleneApp.framework */,
+				E088C8259BAA02E217EC4941 /* Pods_GaleneWatch.framework */,
+				038A845E4729B9E24741464A /* Pods_GaleneWatch_WatchKit_App.framework */,
+				B3A107E619E064BC2A5C1C76 /* Pods_GaleneWatch_WatchKit_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -225,9 +288,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB8030F426228A05009B97F5 /* Build configuration list for PBXNativeTarget "GaleneApp" */;
 			buildPhases = (
+				44907A9575D3B9AB1E5FA13C /* [CP] Check Pods Manifest.lock */,
 				AB8030DC26228A04009B97F5 /* Sources */,
 				AB8030DD26228A04009B97F5 /* Frameworks */,
 				AB8030DE26228A04009B97F5 /* Resources */,
+				5BB3D845DB3A5F933573F157 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -242,8 +307,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0DBB99F2658299700762B8A /* Build configuration list for PBXNativeTarget "GaleneWatch" */;
 			buildPhases = (
+				E1DC766D06CA1F19B67B4F45 /* [CP] Check Pods Manifest.lock */,
 				B0DBB9732658299500762B8A /* Resources */,
 				B0DBB9972658299700762B8A /* Embed Watch Content */,
+				DDF35C0CF2C865A4061CB69F /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -259,8 +326,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0DBB99E2658299700762B8A /* Build configuration list for PBXNativeTarget "GaleneWatch WatchKit App" */;
 			buildPhases = (
+				282938A8075488E585CF4024 /* [CP] Check Pods Manifest.lock */,
 				B0DBB9762658299500762B8A /* Resources */,
 				B0DBB99A2658299700762B8A /* Embed App Extensions */,
+				10EDD3F38B9CAF7E8DA89C4E /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -276,6 +345,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0DBB99D2658299700762B8A /* Build configuration list for PBXNativeTarget "GaleneWatch WatchKit Extension" */;
 			buildPhases = (
+				818C9ED48BA7A6B535266C27 /* [CP] Check Pods Manifest.lock */,
 				B0DBB9832658299600762B8A /* Sources */,
 				B0DBB9842658299600762B8A /* Frameworks */,
 				B0DBB9852658299600762B8A /* Resources */,
@@ -339,6 +409,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB8030F026228A05009B97F5 /* LaunchScreen.storyboard in Resources */,
+				AB01C754265E244C006F6DE8 /* GoogleService-Info.plist in Resources */,
 				AB8030ED26228A05009B97F5 /* Assets.xcassets in Resources */,
 				AB8030EB26228A04009B97F5 /* Main.storyboard in Resources */,
 			);
@@ -370,11 +441,120 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		282938A8075488E585CF4024 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GaleneWatch WatchKit App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		44907A9575D3B9AB1E5FA13C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GaleneApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5BB3D845DB3A5F933573F157 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GaleneApp/Pods-GaleneApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GaleneApp/Pods-GaleneApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GaleneApp/Pods-GaleneApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		818C9ED48BA7A6B535266C27 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GaleneWatch WatchKit Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1DC766D06CA1F19B67B4F45 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GaleneWatch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AB8030DC26228A04009B97F5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB01C775265E2818006F6DE8 /* LoginViewController.swift in Sources */,
 				B0B167FD2648D17C00A65C75 /* PreguntasViewController.swift in Sources */,
 				50F89F2626461002003641EE /* PreInfoViewController.swift in Sources */,
 				AB154A952649FF2E008DEC4B /* MapaViewController.swift in Sources */,
@@ -386,6 +566,7 @@
 				ABAA2361264B21430044901C /* Properties.swift in Sources */,
 				ABDDE8FD262942D900AD550D /* RetoTerminadoViewController.swift in Sources */,
 				B021BF002627C8BF00D0F972 /* DiagnosisViewController.swift in Sources */,
+				AB01C77B265E293E006F6DE8 /* RegistroViewController.swift in Sources */,
 				0421E8982623D8BB0081097F /* HomeNavController.swift in Sources */,
 				AB559A0E2628FC3000501532 /* RetosTableViewController.swift in Sources */,
 				508D043A2647870E00A09AF6 /* GaleneModel.mlmodel in Sources */,
@@ -566,6 +747,7 @@
 		};
 		AB8030F526228A05009B97F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CA22BFFA3EE0A52EB0E1381 /* Pods-GaleneApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -585,6 +767,7 @@
 		};
 		AB8030F626228A05009B97F5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFABA291047B184E0C85FFE0 /* Pods-GaleneApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -604,6 +787,7 @@
 		};
 		B0DBB9952658299700762B8A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA58BB6EC95C0860CA0755F1 /* Pods-GaleneWatch.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -616,6 +800,7 @@
 		};
 		B0DBB9962658299700762B8A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34DF694EDA21BCE651B0DA03 /* Pods-GaleneWatch.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -628,6 +813,7 @@
 		};
 		B0DBB9982658299700762B8A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8087834F6B34A730BF83DD3 /* Pods-GaleneWatch WatchKit App.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -647,6 +833,7 @@
 		};
 		B0DBB9992658299700762B8A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53B5E948C3A5007A49978750 /* Pods-GaleneWatch WatchKit App.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -666,6 +853,7 @@
 		};
 		B0DBB99B2658299700762B8A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DE5AE90C17BB6BC9397981C /* Pods-GaleneWatch WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
@@ -687,6 +875,7 @@
 		};
 		B0DBB99C2658299700762B8A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B76383EB491B1F2E7C2911EA /* Pods-GaleneWatch WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
