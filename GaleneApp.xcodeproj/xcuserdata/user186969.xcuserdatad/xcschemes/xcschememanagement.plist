@@ -7,7 +7,17 @@
 		<key>GaleneApp.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>23</integer>
+		</dict>
+		<key>GaleneWatch WatchKit App (Complication).xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>25</integer>
+		</dict>
+		<key>GaleneWatch WatchKit App.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>24</integer>
 		</dict>
 	</dict>
 </dict>
