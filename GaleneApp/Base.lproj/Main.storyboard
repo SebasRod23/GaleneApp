@@ -44,7 +44,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog-pic" translatesAutoresizingMaskIntoConstraints="NO" id="Vi4-SM-LJt">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vi4-SM-LJt">
                                 <rect key="frame" x="-37.5" y="98" width="450" height="115"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVi-n9-xId">
@@ -915,7 +915,7 @@
                     <navigationItem key="navigationItem" id="c7k-if-adx"/>
                     <connections>
                         <outlet property="confirmPassword" destination="UB4-ir-CRi" id="Rbd-fw-bE3"/>
-                        <outlet property="correoField" destination="KwG-DF-1O9" id="qLP-23-980"/>
+                        <outlet property="correoField" destination="FP1-3k-g3M" id="rwt-c3-jEw"/>
                         <outlet property="errorLabel" destination="ZHT-qV-nea" id="wU2-CL-W6O"/>
                         <outlet property="passwordField" destination="KwG-DF-1O9" id="1J5-k6-n80"/>
                     </connections>
@@ -1409,7 +1409,6 @@
         <segue reference="I9P-q7-hIM"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="dog-pic" width="450" height="450"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="man-running-symball-og-01-jkqqdt" width="3333" height="3333"/>
         <image name="map" catalog="system" width="128" height="110"/>
