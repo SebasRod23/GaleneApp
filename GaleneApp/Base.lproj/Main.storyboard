@@ -997,20 +997,6 @@
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKe-5Z-0R6">
-                                <rect key="frame" x="221" y="511" width="120" height="40"/>
-                                <color key="backgroundColor" red="0.42178148030000001" green="0.2636986301" blue="0.64041095889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="zCc-CB-6A0"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Siguiente">
-                                    <color key="titleColor" red="0.80392156859999997" green="0.79215686269999996" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="xvV-Kl-hQR" kind="show" id="KSl-iQ-oNQ"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YiE-UY-3Yy">
                                 <rect key="frame" x="77.5" y="235" width="220" height="40"/>
                                 <color key="backgroundColor" red="0.98389106989999997" green="0.62687462569999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1029,35 +1015,58 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKe-5Z-0R6">
+                                <rect key="frame" x="127.5" y="508" width="120" height="40"/>
+                                <color key="backgroundColor" red="0.42178148030000001" green="0.2636986301" blue="0.64041095889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="iKw-Ur-Sve"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Siguiente">
+                                    <color key="titleColor" red="0.80392156859999997" green="0.79215686269999996" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="xvV-Kl-hQR" kind="show" identifier="goToPhoto" id="KSl-iQ-oNQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lgl-Q2-Tot"/>
                         <color key="backgroundColor" red="0.427950263" green="0.72763651610000002" blue="0.64675420520000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="pjO-fD-VFQ" firstAttribute="top" secondItem="G9E-G6-vfw" secondAttribute="bottom" constant="35" id="3rj-7y-d3T"/>
                             <constraint firstItem="G9E-G6-vfw" firstAttribute="top" secondItem="lgl-Q2-Tot" secondAttribute="top" constant="40" id="5AB-ZA-rux"/>
                             <constraint firstItem="G9E-G6-vfw" firstAttribute="centerX" secondItem="VBB-HO-Xyh" secondAttribute="centerX" id="5SN-xZ-X6x"/>
+                            <constraint firstItem="LKe-5Z-0R6" firstAttribute="centerX" secondItem="VBB-HO-Xyh" secondAttribute="centerX" id="9A7-TG-0KE"/>
                             <constraint firstItem="YiE-UY-3Yy" firstAttribute="centerX" secondItem="VBB-HO-Xyh" secondAttribute="centerX" id="Ccb-vw-qdo"/>
                             <constraint firstItem="YiE-UY-3Yy" firstAttribute="top" secondItem="pjO-fD-VFQ" secondAttribute="bottom" constant="33" id="Dri-o8-KIG"/>
                             <constraint firstItem="GA5-SF-7pW" firstAttribute="top" secondItem="Dli-cg-JQw" secondAttribute="bottom" constant="20" id="EqL-RK-AFI"/>
-                            <constraint firstItem="LKe-5Z-0R6" firstAttribute="top" secondItem="GA5-SF-7pW" secondAttribute="bottom" constant="56" id="Her-v0-mym"/>
                             <constraint firstItem="Dli-cg-JQw" firstAttribute="centerX" secondItem="VBB-HO-Xyh" secondAttribute="centerX" id="Jcb-NG-nxo"/>
                             <constraint firstItem="pjO-fD-VFQ" firstAttribute="centerX" secondItem="VBB-HO-Xyh" secondAttribute="centerX" id="Jdf-0t-G9G"/>
                             <constraint firstItem="Zpt-xl-laC" firstAttribute="centerX" secondItem="VBB-HO-Xyh" secondAttribute="centerX" id="KOz-aD-emM"/>
-                            <constraint firstItem="lgl-Q2-Tot" firstAttribute="trailing" secondItem="LKe-5Z-0R6" secondAttribute="trailing" constant="34" id="NUd-Rs-mbT"/>
                             <constraint firstItem="Zpt-xl-laC" firstAttribute="top" secondItem="YiE-UY-3Yy" secondAttribute="bottom" constant="20" id="RuG-Aq-MeV"/>
                             <constraint firstItem="Dli-cg-JQw" firstAttribute="centerX" secondItem="VBB-HO-Xyh" secondAttribute="centerX" id="TZG-TC-GHd"/>
                             <constraint firstItem="GA5-SF-7pW" firstAttribute="top" secondItem="Dli-cg-JQw" secondAttribute="bottom" constant="20" id="Tl7-3g-6D5"/>
-                            <constraint firstItem="LKe-5Z-0R6" firstAttribute="leading" secondItem="lgl-Q2-Tot" secondAttribute="leading" constant="221" id="YMA-iA-xzI"/>
+                            <constraint firstItem="lgl-Q2-Tot" firstAttribute="bottom" secondItem="LKe-5Z-0R6" secondAttribute="bottom" constant="50" id="Xhh-kW-zfg"/>
+                            <constraint firstItem="LKe-5Z-0R6" firstAttribute="top" secondItem="GA5-SF-7pW" secondAttribute="bottom" constant="53" id="ZFi-Jv-FAQ"/>
                             <constraint firstItem="Dli-cg-JQw" firstAttribute="top" secondItem="Zpt-xl-laC" secondAttribute="bottom" constant="20" id="ciJ-ne-3fL"/>
                             <constraint firstItem="GA5-SF-7pW" firstAttribute="centerX" secondItem="VBB-HO-Xyh" secondAttribute="centerX" id="fay-FW-qpv"/>
                             <constraint firstItem="Zpt-xl-laC" firstAttribute="top" secondItem="YiE-UY-3Yy" secondAttribute="bottom" constant="20" id="jLt-yJ-iHR"/>
                             <constraint firstItem="YiE-UY-3Yy" firstAttribute="centerX" secondItem="VBB-HO-Xyh" secondAttribute="centerX" id="mqe-MA-huE"/>
                             <constraint firstItem="Zpt-xl-laC" firstAttribute="centerX" secondItem="VBB-HO-Xyh" secondAttribute="centerX" id="qt3-OY-jss"/>
-                            <constraint firstItem="lgl-Q2-Tot" firstAttribute="bottom" secondItem="LKe-5Z-0R6" secondAttribute="bottom" constant="47" id="ruE-e6-cYd"/>
                             <constraint firstItem="GA5-SF-7pW" firstAttribute="centerX" secondItem="VBB-HO-Xyh" secondAttribute="centerX" id="utc-Cc-n8z"/>
                             <constraint firstItem="pjO-fD-VFQ" firstAttribute="centerX" secondItem="VBB-HO-Xyh" secondAttribute="centerX" id="xnN-k1-Pbl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fiS-Wm-IAq"/>
+                    <connections>
+                        <outlet property="bttn0" destination="YiE-UY-3Yy" id="mBJ-rS-DxD"/>
+                        <outlet property="bttn1" destination="Zpt-xl-laC" id="nAr-Tz-wXp"/>
+                        <outlet property="bttn2" destination="Dli-cg-JQw" id="54f-tj-sNU"/>
+                        <outlet property="bttn3" destination="GA5-SF-7pW" id="X3B-dy-Yye"/>
+                        <outlet property="lblNumber" destination="G9E-G6-vfw" id="dAz-yl-K4O"/>
+                        <outlet property="lblQuestion" destination="pjO-fD-VFQ" id="FZ6-p0-EQb"/>
+                        <outlet property="nextBttn" destination="LKe-5Z-0R6" id="lvn-wH-Tcw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gQj-7E-gqh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
