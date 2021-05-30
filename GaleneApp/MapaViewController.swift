@@ -42,7 +42,7 @@ class MapaViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         var index=0
         for location  in nuevoArray {
             print(location)
-            let objeto = location as! [String: Any]
+            let objeto = location as [String: Any]
             let s:String = objeto["nombre"] as! String
             guard let numStr1 = objeto["latitud"]! as? Double else {
                  return
