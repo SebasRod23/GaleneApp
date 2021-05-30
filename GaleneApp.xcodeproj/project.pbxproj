@@ -27,6 +27,7 @@
 		AB8030EB26228A04009B97F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB8030E926228A04009B97F5 /* Main.storyboard */; };
 		AB8030ED26228A05009B97F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB8030EC26228A05009B97F5 /* Assets.xcassets */; };
 		AB8030F026228A05009B97F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB8030EE26228A05009B97F5 /* LaunchScreen.storyboard */; };
+		AB8E690C26601D0B00C2D3D9 /* ForgotPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8E690B26601D0B00C2D3D9 /* ForgotPassViewController.swift */; };
 		ABAA2361264B21430044901C /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAA2360264B21430044901C /* Properties.swift */; };
 		ABDDE8FD262942D900AD550D /* RetoTerminadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDDE8FC262942D900AD550D /* RetoTerminadoViewController.swift */; };
 		B021BF002627C8BF00D0F972 /* DiagnosisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B021BEFF2627C8BF00D0F972 /* DiagnosisViewController.swift */; };
@@ -113,6 +114,7 @@
 		AB8030EC26228A05009B97F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB8030EF26228A05009B97F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB8030F126228A05009B97F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB8E690B26601D0B00C2D3D9 /* ForgotPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassViewController.swift; sourceTree = "<group>"; };
 		ABAA2360264B21430044901C /* Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
 		ABDDE8FC262942D900AD550D /* RetoTerminadoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetoTerminadoViewController.swift; sourceTree = "<group>"; };
 		B021BEFF2627C8BF00D0F972 /* DiagnosisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisViewController.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				ABAA2360264B21430044901C /* Properties.swift */,
 				AB01C774265E2818006F6DE8 /* LoginViewController.swift */,
 				AB01C77A265E293E006F6DE8 /* RegistroViewController.swift */,
+				AB8E690B26601D0B00C2D3D9 /* ForgotPassViewController.swift */,
 			);
 			path = GaleneApp;
 			sourceTree = "<group>";
@@ -554,6 +557,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB8E690C26601D0B00C2D3D9 /* ForgotPassViewController.swift in Sources */,
 				AB01C775265E2818006F6DE8 /* LoginViewController.swift in Sources */,
 				B0B167FD2648D17C00A65C75 /* PreguntasViewController.swift in Sources */,
 				50F89F2626461002003641EE /* PreInfoViewController.swift in Sources */,

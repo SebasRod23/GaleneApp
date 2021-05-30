@@ -7,7 +7,7 @@
 
 import UIKit
 import HealthKit
-
+import FirebaseAuth
 class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var snButton: UIButton!
@@ -28,12 +28,24 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         self.navigationController!.navigationBar.shadowImage = UIImage()
         self.navigationController!.navigationBar.isTranslucent = true
         self.navigationController!.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .done, target: self, action: #selector(self.signOut))
         
         
         // Do any additional setup after loading the view.
     }
+    @objc func signOut(){
+        do{
+            try Auth.auth().signOut();
+            print("Saliste")
+            performSegue(withIdentifier: "homeToLogin", sender: self)
+        }catch let err{
+            print(err)
+            print("Error")
+        }
     
+
+    }
+  
     @IBAction func changeProfileImage(_ sender: UIButton) {
         picker.sourceType = UIImagePickerController.SourceType.photoLibrary
         present(picker, animated: true, completion: nil)

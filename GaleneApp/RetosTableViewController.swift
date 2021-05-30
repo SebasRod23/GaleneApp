@@ -6,15 +6,18 @@
 //
 import UIKit
 import HealthKit
-
+import UserNotifications
 class RetosTableViewCell: UITableViewCell {
     @IBOutlet weak var iconLabel: UIImageView!
     @IBOutlet weak var retoLabel: UILabel!
     @IBOutlet weak var completadoButton: UIButton!
     @IBOutlet weak var progressLabel: UILabel!
+    @IBOutlet weak var recordar: UISwitch!
     
+   
     @IBAction func completadoFunc(_ sender: Any) {
     }
+
 }
 
 class RetosTableViewController: UITableViewController {
@@ -139,6 +142,8 @@ class RetosTableViewController: UITableViewController {
         cell.retoLabel?.text=strInfo
         cell.completadoButton.tag = indexPath.row
         cell.completadoButton.addTarget(self, action: #selector(goToCongrats(sender:)), for: .touchUpInside)
+        cell.recordar.tag = indexPath.row
+        cell.recordar.addTarget(self, action: #selector(reminders(sender:)), for: .valueChanged)
         if(currTag=="tenis" || currTag=="balon"){
             cell.progressLabel?.text=String(self.count!)+" pasos"
             cell.progressLabel?.isHidden = false
@@ -160,5 +165,32 @@ class RetosTableViewController: UITableViewController {
         nextView.retoInp = strInfo
         self.navigationController?.pushViewController(nextView, animated: true)
     }
-
+    @objc func reminders(sender: UISwitch){
+        let rowIndex: Int = sender.tag
+        if sender.isOn {
+            let center = UNUserNotificationCenter.current()
+            center.requestAuthorization(options: [.alert,.badge,.sound],completionHandler: {succes, error in
+                if succes{
+                    print("YEI")
+                    let content = UNMutableNotificationContent()
+                    content.title = "Tomate un tiempo"
+                    let retoInfo = self.filteredData![rowIndex] as! [String: Any]
+                    let strInfo: String = retoInfo["descripcion"] as! String
+                    content.body = strInfo
+                    content.sound = UNNotificationSound.default
+                    content.categoryIdentifier = "alarm"
+                    content.userInfo = ["customData":"fizzbuzz"]
+                    var dateComponents = DateComponents()
+                    dateComponents.hour = 10
+                    dateComponents.minute = 00
+                    let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+                    let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                    center.add(request)
+                    print(center)
+                } else {
+                    print("No Yai")
+                }
+            })
+         }
+    }
 }
