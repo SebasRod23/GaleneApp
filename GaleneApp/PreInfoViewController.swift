@@ -13,6 +13,8 @@ class PreInfoViewController: UIViewController {
     @IBOutlet weak var answerML: UILabel!
     var inputImage: UIImage?
     var inputAnswerML: String?
+    var diagnosis: String = ""
+    var nretos: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,8 @@ class PreInfoViewController: UIViewController {
         if (segue.identifier == "toDiagnosisViewController") {
             let diagnosisView = (segue.destination as! DiagnosisViewController)
             diagnosisView.tagResult = self.inputAnswerML!
+            diagnosisView.diagnosis = self.diagnosis
+            diagnosisView.nretos = self.nretos
         }
     }
     

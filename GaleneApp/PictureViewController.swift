@@ -13,6 +13,8 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate,
                              UINavigationControllerDelegate {
     
     var imageToML: UIImage?
+    var diagnosis: String = ""
+    var nretos: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,6 +76,8 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate,
         let nextView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PreInfoViewController") as! PreInfoViewController
         nextView.inputImage = self.imageToML
         nextView.inputAnswerML = bestPrediction
+        nextView.diagnosis = self.diagnosis
+        nextView.nretos = self.nretos
         self.navigationController?.pushViewController(nextView, animated: true)
     }
     
