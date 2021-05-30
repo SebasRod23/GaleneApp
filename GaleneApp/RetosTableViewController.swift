@@ -6,12 +6,14 @@
 //
 import UIKit
 import HealthKit
+import UserNotifications
 
 class RetosTableViewCell: UITableViewCell {
     @IBOutlet weak var iconLabel: UIImageView!
     @IBOutlet weak var retoLabel: UILabel!
     @IBOutlet weak var completadoButton: UIButton!
     @IBOutlet weak var progressLabel: UILabel!
+    @IBOutlet weak var recordarSwitch: UISwitch!
     
     @IBAction func completadoFunc(_ sender: Any) {
     }
@@ -139,6 +141,8 @@ class RetosTableViewController: UITableViewController {
         cell.retoLabel?.text=strInfo
         cell.completadoButton.tag = indexPath.row
         cell.completadoButton.addTarget(self, action: #selector(goToCongrats(sender:)), for: .touchUpInside)
+        cell.recordarSwitch.tag = indexPath.row
+        cell.recordarSwitch.addTarget(self, action: #selector(recordar(sender:)), for: .valueChanged)
         if(currTag=="tenis" || currTag=="balon"){
             cell.progressLabel?.text=String(self.count!)+" pasos"
             cell.progressLabel?.isHidden = false
@@ -150,7 +154,34 @@ class RetosTableViewController: UITableViewController {
         
         return cell
     }
-    
+    @objc func recordar(sender: UISwitch){
+        let rowIndex: Int = sender.tag
+        if sender.isOn{
+            let center = UNUserNotificationCenter.current()
+
+            center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+                if granted {
+                    let content = UNMutableNotificationContent()
+                        content.title = "Late wake up call"
+                        let retoInfo = self.filteredData![rowIndex] as! [String: Any]
+                        let strInfo: String = retoInfo["descripcion"] as! String
+                        content.body = strInfo
+                        content.categoryIdentifier = "alarm"
+                        content.userInfo = ["customData": "fizzbuzz"]
+                        content.sound = UNNotificationSound.default
+                        var dateComponents = DateComponents()
+                        dateComponents.hour = 3
+                        dateComponents.minute = 22
+                        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+
+                        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                        center.add(request)
+                } else {
+                    print("D'oh")
+                }
+            }
+        }
+    }
     @objc
     func goToCongrats(sender: UIButton){
         let rowIndex: Int = sender.tag
