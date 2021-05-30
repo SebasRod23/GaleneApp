@@ -9,6 +9,7 @@ import UIKit
 import HealthKit
 import FirebaseStorage
 import Firebase
+import FirebaseAuth
 
 class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -39,6 +40,16 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func logOutButton(_ sender: Any) {
+        do{
+            try Auth.auth().signOut()
+            performSegue(withIdentifier: "HomeToLogin", sender: self)
+        }catch let err{
+            print(err)
+        }
+
+        
+    }
     override func viewWillAppear(_ animated: Bool) {
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
             if let user = user {

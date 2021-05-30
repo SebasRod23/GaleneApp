@@ -19,6 +19,7 @@
 		AB01C775265E2818006F6DE8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB01C774265E2818006F6DE8 /* LoginViewController.swift */; };
 		AB01C77B265E293E006F6DE8 /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB01C77A265E293E006F6DE8 /* RegistroViewController.swift */; };
 		AB154A952649FF2E008DEC4B /* MapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB154A942649FF2E008DEC4B /* MapaViewController.swift */; };
+		AB39EBF626637C110064295E /* ForgotPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB39EBF526637C110064295E /* ForgotPassViewController.swift */; };
 		AB45E070264AF75F00F73C5A /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB45E06F264AF75F00F73C5A /* Annotation.swift */; };
 		AB559A0E2628FC3000501532 /* RetosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB559A0D2628FC3000501532 /* RetosTableViewController.swift */; };
 		AB8030E426228A04009B97F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8030E326228A04009B97F5 /* AppDelegate.swift */; };
@@ -103,6 +104,7 @@
 		AB01C774265E2818006F6DE8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AB01C77A265E293E006F6DE8 /* RegistroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
 		AB154A942649FF2E008DEC4B /* MapaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaViewController.swift; sourceTree = "<group>"; };
+		AB39EBF526637C110064295E /* ForgotPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassViewController.swift; sourceTree = "<group>"; };
 		AB45E06F264AF75F00F73C5A /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 		AB559A0D2628FC3000501532 /* RetosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetosTableViewController.swift; sourceTree = "<group>"; };
 		AB8030E026228A04009B97F5 /* GaleneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GaleneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -228,6 +230,7 @@
 				ABAA2360264B21430044901C /* Properties.swift */,
 				AB01C774265E2818006F6DE8 /* LoginViewController.swift */,
 				AB01C77A265E293E006F6DE8 /* RegistroViewController.swift */,
+				AB39EBF526637C110064295E /* ForgotPassViewController.swift */,
 			);
 			path = GaleneApp;
 			sourceTree = "<group>";
@@ -554,6 +557,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB39EBF626637C110064295E /* ForgotPassViewController.swift in Sources */,
 				AB01C775265E2818006F6DE8 /* LoginViewController.swift in Sources */,
 				B0B167FD2648D17C00A65C75 /* PreguntasViewController.swift in Sources */,
 				50F89F2626461002003641EE /* PreInfoViewController.swift in Sources */,

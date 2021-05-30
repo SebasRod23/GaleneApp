@@ -29,7 +29,16 @@ class RegistroViewController: UIViewController {
     }
     
   
+    @IBAction func contrasenaKeyboard(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
     
+    @IBAction func confcontKeyboard(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    @IBAction func emailKeyboard(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             // Get the new view controller using segue.destination.
             // Pass the selected object to the new view controller.
