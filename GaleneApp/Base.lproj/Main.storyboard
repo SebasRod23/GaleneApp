@@ -307,49 +307,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SOBRE NOSOTROS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hL-uE-lUm">
-                                <rect key="frame" x="92" y="85" width="207" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOBRE NOSOTROS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hL-uE-lUm">
+                                <rect key="frame" x="108" y="90" width="159" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="375" id="3Yu-eC-ko1"/>
-                                    <constraint firstAttribute="width" constant="375" id="6Bl-aL-MDJ"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="207" id="IWf-N8-c9d"/>
-                                    <constraint firstAttribute="height" constant="21" id="QDf-63-NDj"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="Vz1-sS-2O2"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="21" id="gRx-HB-Ya3"/>
-                                    <constraint firstAttribute="width" secondItem="2hL-uE-lUm" secondAttribute="height" multiplier="69:7" id="mAL-s8-HYZ"/>
+                                    <constraint firstAttribute="height" constant="21" id="ie2-pp-Mvk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coi-lN-YdK">
-                                <rect key="frame" x="11.967244701349045" y="356" width="348.99999999999977" height="224.00000000000045"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="376" id="I9C-RB-V6I"/>
-                                    <constraint firstAttribute="height" constant="224" id="t0w-at-8bU"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coi-lN-YdK">
+                                <rect key="frame" x="33.5" y="359" width="308" height="224"/>
                                 <string key="text">Application developed at Tecnológico de Monterrey Campus Mexico City in the subject Proyecto de Desarrollo de Aplicaciones Móviles, semester 6  by students -Arturo Efrén Jimenéz Garibaldi -Georgina Alejandra Gámez Melgar -Juan Sebastian Rodríguez Galarza -Javier Mendieta Flores Teacher Dr. José Martin Molina Espinosa  </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hym-TV-upe">
-                                <rect key="frame" x="40" y="172" width="310" height="163"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hym-TV-upe">
+                                <rect key="frame" x="37.5" y="175" width="300" height="163"/>
                                 <color key="backgroundColor" red="0.98385530710000002" green="0.62299895289999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="326" id="MkI-jz-P4k"/>
-                                    <constraint firstAttribute="height" constant="163" id="U2H-G2-93v"/>
+                                    <constraint firstAttribute="height" constant="163" id="6JK-b4-lfP"/>
                                 </constraints>
                                 <string key="text">Galene busca ayudar a las personas que padecen ansiedad y que están buscando ayuda. Nuestro objetivo es otorgarles herramientas necesarias para buscar ayuda profesional. Además que proponemos una serie de retos para aliviar el estrés</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="¿QUÉ ES GALENE?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5A-fM-WWq">
-                                <rect key="frame" x="0.0" y="122" width="375" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿QUÉ ES GALENE?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5A-fM-WWq">
+                                <rect key="frame" x="111.5" y="145" width="152" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="MAW-Ug-csN"/>
-                                    <constraint firstAttribute="height" constant="22" id="OEz-K2-iuP"/>
+                                    <constraint firstAttribute="height" constant="22" id="GeU-nB-zuK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
@@ -359,14 +347,15 @@
                         <viewLayoutGuide key="safeArea" id="uFs-kw-KEt"/>
                         <color key="backgroundColor" red="0.43185785409999999" green="0.72757607700000004" blue="0.64262902740000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="2hL-uE-lUm" firstAttribute="leading" secondItem="Hym-TV-upe" secondAttribute="leading" constant="-56" id="Gdi-ub-ctt"/>
-                            <constraint firstItem="coi-lN-YdK" firstAttribute="centerX" secondItem="usk-Q5-eV8" secondAttribute="centerX" constant="-1.0327552986510682" id="QjN-dq-tDl"/>
-                            <constraint firstItem="2hL-uE-lUm" firstAttribute="top" secondItem="uFs-kw-KEt" secondAttribute="top" constant="31" id="W6M-Jd-vzn"/>
-                            <constraint firstItem="R5A-fM-WWq" firstAttribute="top" secondItem="2hL-uE-lUm" secondAttribute="bottom" constant="34" id="alL-NX-mcq"/>
-                            <constraint firstItem="2hL-uE-lUm" firstAttribute="leading" secondItem="R5A-fM-WWq" secondAttribute="leading" constant="-16" id="bkG-g0-UTd"/>
-                            <constraint firstItem="coi-lN-YdK" firstAttribute="top" secondItem="Hym-TV-upe" secondAttribute="bottom" constant="21" id="eYf-0E-UOb"/>
-                            <constraint firstItem="2hL-uE-lUm" firstAttribute="trailing" secondItem="usk-Q5-eV8" secondAttribute="trailingMargin" id="vS1-yk-vrw"/>
-                            <constraint firstItem="Hym-TV-upe" firstAttribute="top" secondItem="R5A-fM-WWq" secondAttribute="bottom" constant="8" id="xi9-VL-eja"/>
+                            <constraint firstItem="Hym-TV-upe" firstAttribute="top" secondItem="R5A-fM-WWq" secondAttribute="bottom" constant="8" symbolic="YES" id="06H-e5-224"/>
+                            <constraint firstItem="2hL-uE-lUm" firstAttribute="top" secondItem="uFs-kw-KEt" secondAttribute="top" constant="34" id="BJl-9C-rwe"/>
+                            <constraint firstItem="R5A-fM-WWq" firstAttribute="top" secondItem="2hL-uE-lUm" secondAttribute="bottom" constant="34" id="KWQ-yn-zgh"/>
+                            <constraint firstItem="coi-lN-YdK" firstAttribute="centerX" secondItem="usk-Q5-eV8" secondAttribute="centerX" id="VI4-ZA-Sbo"/>
+                            <constraint firstItem="coi-lN-YdK" firstAttribute="top" secondItem="Hym-TV-upe" secondAttribute="bottom" constant="21" id="fq4-9P-8fb"/>
+                            <constraint firstItem="2hL-uE-lUm" firstAttribute="centerX" secondItem="usk-Q5-eV8" secondAttribute="centerX" id="fqJ-Wf-GE6"/>
+                            <constraint firstItem="Hym-TV-upe" firstAttribute="centerX" secondItem="usk-Q5-eV8" secondAttribute="centerX" id="ibZ-r9-w1W"/>
+                            <constraint firstItem="uFs-kw-KEt" firstAttribute="bottom" secondItem="coi-lN-YdK" secondAttribute="bottom" constant="15" id="u3G-fU-QGT"/>
+                            <constraint firstItem="R5A-fM-WWq" firstAttribute="centerX" secondItem="usk-Q5-eV8" secondAttribute="centerX" id="vni-yZ-ckn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jGG-jr-Jkr"/>
@@ -405,8 +394,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWy-Hh-ss5">
-                                <rect key="frame" x="27" y="500" width="322" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWy-Hh-ss5">
+                                <rect key="frame" x="27" y="500" width="321" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="56z-uf-PKg"/>
                                 </constraints>
@@ -964,8 +953,8 @@
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. En la semana padeció de sudores, ya sean fríos o calientes." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjO-fD-VFQ">
-                                <rect key="frame" x="37.5" y="159" width="300" height="43"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Cargando..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjO-fD-VFQ">
+                                <rect key="frame" x="37.5" y="159" width="300" height="21.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="mSc-do-dBp"/>
                                 </constraints>
@@ -1009,8 +998,8 @@
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pregunta 1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G9E-G6-vfw">
-                                <rect key="frame" x="129" y="96" width="117" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Cargando..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G9E-G6-vfw">
+                                <rect key="frame" x="124.5" y="96" width="126" height="28"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1019,6 +1008,7 @@
                                 <rect key="frame" x="127.5" y="508" width="120" height="40"/>
                                 <color key="backgroundColor" red="0.42178148030000001" green="0.2636986301" blue="0.64041095889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="DoO-eu-vQz"/>
                                     <constraint firstAttribute="width" constant="120" id="iKw-Ur-Sve"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -1095,7 +1085,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="185"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correr 1 hora al aire libre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abr-jb-Wcl">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correr 1 hora al aire libre" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abr-jb-Wcl">
                                             <rect key="frame" x="31" y="11" width="212" height="45"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="textColor"/>

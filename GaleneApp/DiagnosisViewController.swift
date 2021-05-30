@@ -89,8 +89,6 @@ class DiagnosisViewController: UIViewController {
                 }
                 
                 let user = Auth.auth().currentUser
-                // [END get_user_profile]
-                // [START user_profile]
                 if let user = user {
                     let uid = user.uid
                     // Save it on Firebase
@@ -106,27 +104,6 @@ class DiagnosisViewController: UIViewController {
                 
             }
         }
-        /*
-        // Randomly select challenges
-        var retosSelected: [Reto] = []
-        var randoms: [String] = []
-        while nretos > 0 {
-            let reto = Reto(descripcion: retos.randomElement()!)
-            if (!randoms.contains(reto.descripcion)){
-                retosSelected.append(reto)
-                randoms.append(reto.descripcion)
-                nretos-=1
-            }
-        }
-        
-        
-        // Save it on Firebase
-        db.collection("historial").document().setData([
-            "fecha": Date.init(),
-            "imagen":img,
-            "resultado":diagnosis,
-            "retos": retosSelected
-        ])*/
         
         
     }
