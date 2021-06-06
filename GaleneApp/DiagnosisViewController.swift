@@ -15,8 +15,12 @@ class DiagnosisViewController: UIViewController {
     var tagResult: String?
     var diagnosis: String = ""
     var nretos: Int = 0
+    var user : User?
     
-    
+    /** @var handle
+          @brief The handler for the auth state listener, to allow cancelling later.
+       */
+    var handle: AuthStateDidChangeListenerHandle?
     var db: Firestore!
     
     struct MLData: Codable {
@@ -32,6 +36,19 @@ class DiagnosisViewController: UIViewController {
         Firestore.firestore().settings = settings
         // [END setup]
         db = Firestore.firestore()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            if let user = user {
+                self.user = user
+              }
+        }
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        Auth.auth().removeStateDidChangeListener(handle!)
     }
     
     @IBAction func backToHome(_ sender: UIButton) {
@@ -62,7 +79,7 @@ class DiagnosisViewController: UIViewController {
         var retos: [String] = []
         var img: String = ""
         // Get tags
-        db.collection("retos").whereField("tags", arrayContains: tagResult).getDocuments() { (querySnapshot, err) in
+        db.collection("retos").whereField("tags", arrayContains: tagResult!).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print(err)
             } else {
@@ -88,20 +105,15 @@ class DiagnosisViewController: UIViewController {
                     retosAny.append(reto.toAnyObject())
                 }
                 
-                let user = Auth.auth().currentUser
-                if let user = user {
-                    let uid = user.uid
-                    // Save it on Firebase
-                    self.db.collection("historial").document().setData([
-                        "fecha": Date.init(),
-                        "imagen":img,
-                        "resultado":self.diagnosis,
-                        "retos": retosAny,
-                        "userID": uid
-                    ])
-                }
-                
-                
+                let uid = self.user!.uid
+                // Save it on Firebase
+                self.db.collection("historial").document().setData([
+                    "fecha": Date.init(),
+                    "imagen":img,
+                    "resultado":self.diagnosis,
+                    "retos": retosAny,
+                    "userID": uid
+                ])
             }
         }
         

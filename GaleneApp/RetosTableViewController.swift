@@ -7,6 +7,8 @@
 import UIKit
 import HealthKit
 import UserNotifications
+import FirebaseFirestore
+import FirebaseAuth
 
 class RetosTableViewCell: UITableViewCell {
     @IBOutlet weak var iconLabel: UIImageView!
@@ -21,65 +23,95 @@ class RetosTableViewCell: UITableViewCell {
 
 class RetosTableViewController: UITableViewController {
     
-    struct MLData: Codable {
-        var MLString: String
-    }
+    var historialData: Historial?
+    var user : User?
+    /** @var handle
+          @brief The handler for the auth state listener, to allow cancelling later.
+       */
+    var handle: AuthStateDidChangeListenerHandle?
     
-    let urlData = "http://martinmolina.com.mx/202111/equipo3/data/retos.json"
-    var currTag: String?
-    var data: [Any]?
-    var filteredData: [Any]?
+    var db: Firestore!
     
     private var healthStore : Healthstore?
     private var count: Int? = 0
     
+    struct Reto {
+        var cumplido: Bool
+        var descripcion: String
+        var recordatorio: Bool
+        
+        func toAnyObject()->Any{
+            return[
+                "cumplido": cumplido,
+                "descripcion": descripcion,
+                "recordatorio": recordatorio
+            ]
+        }
+        
+    }
+    
+    struct Historial {
+        var fecha: Date
+        let imagen: String
+        let resultado: String
+        var retos: [[String: Any]]
+        
+        func toAnyObject()->Any{
+            return[
+                "fecha": fecha,
+                "imagen": imagen,
+                "resultado": resultado,
+                "retos": retos,
+            ]
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
-        healthStore=Healthstore()
-        self.fetchDataURL()
-        self.loadMLData()
-        self.filterDataArray()
-        if(currTag=="tenis" || currTag=="balon"){
-            self.getPasos()
-        }
-        
-        
+        // [START setup]
+        let settings = FirestoreSettings()
+
+        Firestore.firestore().settings = settings
+        // [END setup]
+        self.db = Firestore.firestore()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.loadMLData()
-        self.filterDataArray()
-        tableView.reloadData()
+        
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            if let user = user {
+                self.user = user
+                self.healthStore = Healthstore()
+                self.fetchHistorial()
+              }
+        }
         
     }
     
-    func filterDataArray() {
-        filteredData = data!.filter {
-            let elem = ($0 as! [String: Any])
-            let tags = elem["tags"] as! [String]
-            return tags.contains(self.currTag!)
-        }
+    override func viewWillDisappear(_ animated: Bool) {
+        Auth.auth().removeStateDidChangeListener(handle!)
     }
     
-    func loadMLData() {
-        if let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString?,
-        let sourcePath = documentsPath.appendingPathComponent("MLData.plist") as NSString?,
-        let dictionary = NSDictionary(contentsOfFile: sourcePath as String) {
-            self.currTag = dictionary["MLString"] as? String
+    func fetchHistorial(){
+        let uid : String = self.user!.uid
+        db.collection("historial").whereField("userID", isEqualTo: uid).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print(err)
+            } else {
+                var historial : [Historial] = []
+                for document in querySnapshot!.documents {                    historial.append(Historial(fecha: (document.get("fecha") as! Timestamp).dateValue(), imagen: document.get("imagen") as! String, resultado: document.get("resultado") as! String, retos: document.get("retos") as! [[String: Any ]]))
+                }
+                let mostRecentHistorial = historial.reduce(historial[0], { $0.fecha.timeIntervalSince1970 > $1.fecha.timeIntervalSince1970 ? $0 : $1 } )
+                self.historialData = mostRecentHistorial
+                if(self.historialData?.imagen == "tenis" || self.historialData?.imagen == "balon") {
+                    self.getPasos()
+                }
+            }
+            self.tableView.reloadData()
         }
-        else {
-            self.currTag = "NA"
-        }
-    }
-    
-    func fetchDataURL() {
-        if let url = URL(string: self.urlData) {
-            let dataFromUrl = try? Data(contentsOf: url)
-            data = try! JSONSerialization.jsonObject(with: dataFromUrl!) as? [Any]
-        } else {
-            print("Error loading data from URL!")
-        }
+        
+        
     }
     
     func getPasos(){
@@ -117,7 +149,7 @@ class RetosTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredData!.count
+        return historialData?.retos.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -126,9 +158,8 @@ class RetosTableViewController: UITableViewController {
         if (object_getClass(cell)?.description()  == "NSNull") {
             cell = UITableViewCell( style: UITableViewCell.CellStyle.default, reuseIdentifier: "reto") as! RetosTableViewCell
         }
-        
-        let retoInfo = self.filteredData![indexPath.row] as! [String: Any]
-        let strInfo: String = String(retoInfo["descripcion"] as! String)
+        let retoInfo = self.historialData?.retos[indexPath.row]
+        let strInfo: String = String(retoInfo?["descripcion"] as! String)
           
 
         cell.retoLabel?.text = strInfo
@@ -143,7 +174,7 @@ class RetosTableViewController: UITableViewController {
         cell.completadoButton.addTarget(self, action: #selector(goToCongrats(sender:)), for: .touchUpInside)
         cell.recordarSwitch.tag = indexPath.row
         cell.recordarSwitch.addTarget(self, action: #selector(recordar(sender:)), for: .valueChanged)
-        if(currTag=="tenis" || currTag=="balon"){
+        if(self.historialData?.imagen == "tenis" || self.historialData?.imagen == "balon"){
             cell.progressLabel?.text=String(self.count!)+" pasos"
             cell.progressLabel?.isHidden = false
         } else{
@@ -163,8 +194,8 @@ class RetosTableViewController: UITableViewController {
                 if granted {
                     let content = UNMutableNotificationContent()
                         content.title = "Late wake up call"
-                        let retoInfo = self.filteredData![rowIndex] as! [String: Any]
-                        let strInfo: String = retoInfo["descripcion"] as! String
+                        let retoInfo = self.historialData?.retos[rowIndex]
+                        let strInfo: String = retoInfo?["descripcion"] as! String
                         content.body = strInfo
                         content.categoryIdentifier = "alarm"
                         content.userInfo = ["customData": "fizzbuzz"]
@@ -186,10 +217,9 @@ class RetosTableViewController: UITableViewController {
     func goToCongrats(sender: UIButton){
         let rowIndex: Int = sender.tag
         let nextView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RetoTerminadoViewController") as! RetoTerminadoViewController
-        let retoInfo = self.filteredData![rowIndex] as! [String: Any]
-        let strInfo: String = retoInfo["descripcion"] as! String
+        let retoInfo = self.historialData?.retos[rowIndex]
+        let strInfo: String = retoInfo?["descripcion"] as! String
         nextView.retoInp = strInfo
         self.navigationController?.pushViewController(nextView, animated: true)
     }
-
 }

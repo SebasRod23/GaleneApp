@@ -50,6 +50,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 
         
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
             if let user = user {
