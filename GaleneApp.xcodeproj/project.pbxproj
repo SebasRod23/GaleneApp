@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0421E8952623D18E0081097F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421E8942623D18E0081097F /* HomeViewController.swift */; };
 		0421E8982623D8BB0081097F /* HomeNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421E8972623D8BB0081097F /* HomeNavController.swift */; };
+		04E64228266DBDB500341A7B /* RetosEnHistorialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E64227266DBDB500341A7B /* RetosEnHistorialTableViewCell.swift */; };
+		04E6422E266DBDF400341A7B /* HistorialDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6422D266DBDF400341A7B /* HistorialDetailViewController.swift */; };
 		263DFCED7A1916B85693F62B /* Pods_GaleneApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7810438B98D26C0C4FAA1A /* Pods_GaleneApp.framework */; };
 		508D043A2647870E00A09AF6 /* GaleneModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 508D04392647870E00A09AF6 /* GaleneModel.mlmodel */; };
 		50907A002644C5A20040C357 /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509079FF2644C5A20040C357 /* PictureViewController.swift */; };
@@ -94,14 +96,19 @@
 		038A845E4729B9E24741464A /* Pods_GaleneWatch_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GaleneWatch_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0421E8942623D18E0081097F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0421E8972623D8BB0081097F /* HomeNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavController.swift; sourceTree = "<group>"; };
-		34DF694EDA21BCE651B0DA03 /* Pods-GaleneWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaleneWatch.release.xcconfig"; path = "Target Support Files/Pods-GaleneWatch/Pods-GaleneWatch.release.xcconfig"; sourceTree = "<group>"; };
-		3CA22BFFA3EE0A52EB0E1381 /* Pods-GaleneApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaleneApp.debug.xcconfig"; path = "Target Support Files/Pods-GaleneApp/Pods-GaleneApp.debug.xcconfig"; sourceTree = "<group>"; };
+		04E64227266DBDB500341A7B /* RetosEnHistorialTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetosEnHistorialTableViewCell.swift; sourceTree = "<group>"; };
+		04E6422D266DBDF400341A7B /* HistorialDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistorialDetailViewController.swift; sourceTree = "<group>"; };
+		082575004CD165B3B0584D01 /* Pods-GaleneWatch WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaleneWatch WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-GaleneWatch WatchKit Extension/Pods-GaleneWatch WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		27C9319C2E90A94C1522B3CE /* Pods-GaleneWatch WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaleneWatch WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-GaleneWatch WatchKit Extension/Pods-GaleneWatch WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		3C7BF009A5E4F390CBEE3EA6 /* Pods-GaleneApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaleneApp.release.xcconfig"; path = "Target Support Files/Pods-GaleneApp/Pods-GaleneApp.release.xcconfig"; sourceTree = "<group>"; };
+		454704606DA1A44018F4A85B /* Pods-GaleneWatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaleneWatch.debug.xcconfig"; path = "Target Support Files/Pods-GaleneWatch/Pods-GaleneWatch.debug.xcconfig"; sourceTree = "<group>"; };
 		508D04392647870E00A09AF6 /* GaleneModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GaleneModel.mlmodel; sourceTree = "<group>"; };
 		509079FF2644C5A20040C357 /* PictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
 		50F89F2526461001003641EE /* PreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreInfoViewController.swift; sourceTree = "<group>"; };
-		53B5E948C3A5007A49978750 /* Pods-GaleneWatch WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaleneWatch WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-GaleneWatch WatchKit App/Pods-GaleneWatch WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
 		5F7810438B98D26C0C4FAA1A /* Pods_GaleneApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GaleneApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9DE5AE90C17BB6BC9397981C /* Pods-GaleneWatch WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaleneWatch WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-GaleneWatch WatchKit Extension/Pods-GaleneWatch WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		6715DEE18A48DFF2EF8395D6 /* Pods-GaleneWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaleneWatch.release.xcconfig"; path = "Target Support Files/Pods-GaleneWatch/Pods-GaleneWatch.release.xcconfig"; sourceTree = "<group>"; };
+		74C22219AC5B39C32FF76E8E /* Pods-GaleneWatch WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaleneWatch WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-GaleneWatch WatchKit App/Pods-GaleneWatch WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		7E1B7C5DD5E496C9F1C1E528 /* Pods-GaleneWatch WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaleneWatch WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-GaleneWatch WatchKit App/Pods-GaleneWatch WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
 		AB01C753265E244C006F6DE8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AB01C774265E2818006F6DE8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AB01C77A265E293E006F6DE8 /* RegistroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
@@ -139,11 +146,8 @@
 		B0DBB9922658299700762B8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0DBB9942658299700762B8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3A107E619E064BC2A5C1C76 /* Pods_GaleneWatch_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GaleneWatch_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B76383EB491B1F2E7C2911EA /* Pods-GaleneWatch WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaleneWatch WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-GaleneWatch WatchKit Extension/Pods-GaleneWatch WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
-		DA58BB6EC95C0860CA0755F1 /* Pods-GaleneWatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaleneWatch.debug.xcconfig"; path = "Target Support Files/Pods-GaleneWatch/Pods-GaleneWatch.debug.xcconfig"; sourceTree = "<group>"; };
+		C6ADB9F87BBF558CAC3E8751 /* Pods-GaleneApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaleneApp.debug.xcconfig"; path = "Target Support Files/Pods-GaleneApp/Pods-GaleneApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E088C8259BAA02E217EC4941 /* Pods_GaleneWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GaleneWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EFABA291047B184E0C85FFE0 /* Pods-GaleneApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaleneApp.release.xcconfig"; path = "Target Support Files/Pods-GaleneApp/Pods-GaleneApp.release.xcconfig"; sourceTree = "<group>"; };
-		F8087834F6B34A730BF83DD3 /* Pods-GaleneWatch WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaleneWatch WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-GaleneWatch WatchKit App/Pods-GaleneWatch WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +187,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B6F0C7794BEEF9AB51EFC88 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C6ADB9F87BBF558CAC3E8751 /* Pods-GaleneApp.debug.xcconfig */,
+				3C7BF009A5E4F390CBEE3EA6 /* Pods-GaleneApp.release.xcconfig */,
+				454704606DA1A44018F4A85B /* Pods-GaleneWatch.debug.xcconfig */,
+				6715DEE18A48DFF2EF8395D6 /* Pods-GaleneWatch.release.xcconfig */,
+				7E1B7C5DD5E496C9F1C1E528 /* Pods-GaleneWatch WatchKit App.debug.xcconfig */,
+				74C22219AC5B39C32FF76E8E /* Pods-GaleneWatch WatchKit App.release.xcconfig */,
+				27C9319C2E90A94C1522B3CE /* Pods-GaleneWatch WatchKit Extension.debug.xcconfig */,
+				082575004CD165B3B0584D01 /* Pods-GaleneWatch WatchKit Extension.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AB8030D726228A04009B97F5 = {
 			isa = PBXGroup;
 			children = (
@@ -191,7 +210,7 @@
 				B0DBB98B2658299600762B8A /* GaleneWatch WatchKit Extension */,
 				AB8030E126228A04009B97F5 /* Products */,
 				B0B44E94264C4E8000AF94FD /* Frameworks */,
-				AC14C929378FC9A9B4EA9B8B /* Pods */,
+				8B6F0C7794BEEF9AB51EFC88 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -209,6 +228,8 @@
 		AB8030E226228A04009B97F5 /* GaleneApp */ = {
 			isa = PBXGroup;
 			children = (
+				04E64227266DBDB500341A7B /* RetosEnHistorialTableViewCell.swift */,
+				04E6422D266DBDF400341A7B /* HistorialDetailViewController.swift */,
 				AB01C753265E244C006F6DE8 /* GoogleService-Info.plist */,
 				B0B44E93264C4E8000AF94FD /* GaleneApp.entitlements */,
 				508D04392647870E00A09AF6 /* GaleneModel.mlmodel */,
@@ -237,21 +258,6 @@
 				AB39EBF526637C110064295E /* ForgotPassViewController.swift */,
 			);
 			path = GaleneApp;
-			sourceTree = "<group>";
-		};
-		AC14C929378FC9A9B4EA9B8B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				3CA22BFFA3EE0A52EB0E1381 /* Pods-GaleneApp.debug.xcconfig */,
-				EFABA291047B184E0C85FFE0 /* Pods-GaleneApp.release.xcconfig */,
-				DA58BB6EC95C0860CA0755F1 /* Pods-GaleneWatch.debug.xcconfig */,
-				34DF694EDA21BCE651B0DA03 /* Pods-GaleneWatch.release.xcconfig */,
-				F8087834F6B34A730BF83DD3 /* Pods-GaleneWatch WatchKit App.debug.xcconfig */,
-				53B5E948C3A5007A49978750 /* Pods-GaleneWatch WatchKit App.release.xcconfig */,
-				9DE5AE90C17BB6BC9397981C /* Pods-GaleneWatch WatchKit Extension.debug.xcconfig */,
-				B76383EB491B1F2E7C2911EA /* Pods-GaleneWatch WatchKit Extension.release.xcconfig */,
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 		B0B44E94264C4E8000AF94FD /* Frameworks */ = {
@@ -570,12 +576,14 @@
 				AB154A952649FF2E008DEC4B /* MapaViewController.swift in Sources */,
 				AB8030E826228A04009B97F5 /* ViewController.swift in Sources */,
 				B021BF032627D14000D0F972 /* HistorialTableViewController.swift in Sources */,
+				04E6422E266DBDF400341A7B /* HistorialDetailViewController.swift in Sources */,
 				AB45E070264AF75F00F73C5A /* Annotation.swift in Sources */,
 				B0B44E91264C499D00AF94FD /* HealthStore.swift in Sources */,
 				AB8030E426228A04009B97F5 /* AppDelegate.swift in Sources */,
 				ABAA2361264B21430044901C /* Properties.swift in Sources */,
 				ABDDE8FD262942D900AD550D /* RetoTerminadoViewController.swift in Sources */,
 				B021BF002627C8BF00D0F972 /* DiagnosisViewController.swift in Sources */,
+				04E64228266DBDB500341A7B /* RetosEnHistorialTableViewCell.swift in Sources */,
 				AB01C77B265E293E006F6DE8 /* RegistroViewController.swift in Sources */,
 				0421E8982623D8BB0081097F /* HomeNavController.swift in Sources */,
 				AB559A0E2628FC3000501532 /* RetosTableViewController.swift in Sources */,
@@ -759,7 +767,7 @@
 		};
 		AB8030F526228A05009B97F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3CA22BFFA3EE0A52EB0E1381 /* Pods-GaleneApp.debug.xcconfig */;
+			baseConfigurationReference = C6ADB9F87BBF558CAC3E8751 /* Pods-GaleneApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -779,7 +787,7 @@
 		};
 		AB8030F626228A05009B97F5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EFABA291047B184E0C85FFE0 /* Pods-GaleneApp.release.xcconfig */;
+			baseConfigurationReference = 3C7BF009A5E4F390CBEE3EA6 /* Pods-GaleneApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -799,7 +807,7 @@
 		};
 		B0DBB9952658299700762B8A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA58BB6EC95C0860CA0755F1 /* Pods-GaleneWatch.debug.xcconfig */;
+			baseConfigurationReference = 454704606DA1A44018F4A85B /* Pods-GaleneWatch.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -812,7 +820,7 @@
 		};
 		B0DBB9962658299700762B8A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 34DF694EDA21BCE651B0DA03 /* Pods-GaleneWatch.release.xcconfig */;
+			baseConfigurationReference = 6715DEE18A48DFF2EF8395D6 /* Pods-GaleneWatch.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -825,7 +833,7 @@
 		};
 		B0DBB9982658299700762B8A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F8087834F6B34A730BF83DD3 /* Pods-GaleneWatch WatchKit App.debug.xcconfig */;
+			baseConfigurationReference = 7E1B7C5DD5E496C9F1C1E528 /* Pods-GaleneWatch WatchKit App.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -845,7 +853,7 @@
 		};
 		B0DBB9992658299700762B8A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 53B5E948C3A5007A49978750 /* Pods-GaleneWatch WatchKit App.release.xcconfig */;
+			baseConfigurationReference = 74C22219AC5B39C32FF76E8E /* Pods-GaleneWatch WatchKit App.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -865,7 +873,7 @@
 		};
 		B0DBB99B2658299700762B8A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9DE5AE90C17BB6BC9397981C /* Pods-GaleneWatch WatchKit Extension.debug.xcconfig */;
+			baseConfigurationReference = 27C9319C2E90A94C1522B3CE /* Pods-GaleneWatch WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
@@ -887,7 +895,7 @@
 		};
 		B0DBB99C2658299700762B8A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B76383EB491B1F2E7C2911EA /* Pods-GaleneWatch WatchKit Extension.release.xcconfig */;
+			baseConfigurationReference = 082575004CD165B3B0584D01 /* Pods-GaleneWatch WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
