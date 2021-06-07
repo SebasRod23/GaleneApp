@@ -45,7 +45,6 @@ class HistorialTableViewController: UITableViewController, UISearchResultsUpdati
     func updateSearchResults(for searchController: UISearchController) {
         if(searchController.searchBar.text!==""){
             datosFiltrados=histData
-            self.tableView.reloadData()
         }else{
             datosFiltrados = histData.filter{
                 let objeto = $0.resultado
@@ -66,15 +65,12 @@ class HistorialTableViewController: UITableViewController, UISearchResultsUpdati
             let settings = FirestoreSettings()
             Firestore.firestore().settings = settings
             self.db = Firestore.firestore()
-            
+            self.getHistorial()
             datosFiltrados = histData
-            searchController.searchResultsUpdater=self
-            searchController.obscuresBackgroundDuringPresentation=false
-            searchController.hidesNavigationBarDuringPresentation=false
-            tableView.tableHeaderView=searchController.searchBar
+            self.tableView.reloadData()
             
             
-            
+
             tableView.rowHeight = UITableView.automaticDimension
             tableView.estimatedRowHeight = 600
         }
@@ -85,7 +81,10 @@ class HistorialTableViewController: UITableViewController, UISearchResultsUpdati
                 self.user = user
             }
         })
-        self.getHistorial()
+        searchController.searchResultsUpdater=self
+        searchController.obscuresBackgroundDuringPresentation=false
+        searchController.hidesNavigationBarDuringPresentation=false
+        tableView.tableHeaderView=searchController.searchBar
         
     }
     
@@ -116,6 +115,7 @@ class HistorialTableViewController: UITableViewController, UISearchResultsUpdati
             }
             self.tableView.reloadData()
         }
+        //self.tableView.reloadData()
     }
     
     
@@ -124,7 +124,6 @@ class HistorialTableViewController: UITableViewController, UISearchResultsUpdati
         return 120
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       //Aqui hacemos que muestre los detalles
         let selectedHist = datosFiltrados[indexPath.row]
         let vc = storyboard?.instantiateViewController(withIdentifier:"HistorialDetailViewController") as? HistorialDetailViewController
         print(selectedHist)
@@ -133,7 +132,6 @@ class HistorialTableViewController: UITableViewController, UISearchResultsUpdati
         formatter.dateStyle = .short
         vc?.fech = formatter.string(from: selectedHist.fecha)
         vc?.reto = selectedHist.retos
-        // String(objeto["tipo"] as! String)
         navigationController?.pushViewController(vc!, animated: true)
         
     }
@@ -151,7 +149,6 @@ class HistorialTableViewController: UITableViewController, UISearchResultsUpdati
 
         override func viewWillDisappear(_ animated: Bool) {
             self.searchController.searchBar.isHidden = true
-
             tableView.tableHeaderView = UIView()
         }
     
