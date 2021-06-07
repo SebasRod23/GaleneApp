@@ -18,4 +18,16 @@ class RetoTerminadoViewController: UIViewController {
         self.retoLabel.text = self.retoInp
     }
 
+    @IBAction func compartirReto(_ sender: UIButton) {
+        let imgTo = UIImage(named: "logo")
+        let strTo = "Has completado el reto \(String(describing: retoInp))"
+        
+        let ShareSheet = UIActivityViewController(
+            activityItems: [imgTo!, strTo], applicationActivities: nil
+        )
+        
+        present(ShareSheet, animated: true)
+    }
+    
+    
 }

@@ -1311,6 +1311,9 @@
                                 <state key="normal" title="Compartir">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="compartirReto:" destination="r9y-tx-YpP" eventType="touchUpInside" id="G65-VK-aRY"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FELICIDADES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrr-q4-fjc">
                                 <rect key="frame" x="97.5" y="125" width="180" height="21"/>
