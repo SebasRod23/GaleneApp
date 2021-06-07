@@ -1,15 +1,58 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="17701" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="17500"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="GaleneWatch_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <table alignment="left" id="IFh-If-52X">
+                            <items>
+                                <tableRow identifier="TableClass" id="uSp-fQ-93p" customClass="TableClass" customModule="GaleneWatch_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="WEF-Tr-FP4">
+                                        <items>
+                                            <label alignment="left" text="Label" id="xf2-w7-gZs"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="labelTable" destination="xf2-w7-gZs" id="H41-Bm-5xr"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <color key="backgroundColor" red="0.42404198650000002" green="0.72769761089999996" blue="0.65087765460000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="tableView" destination="IFh-If-52X" id="ZpH-yR-blt"/>
+                    </connections>
+                </controller>
             </objects>
+            <point key="canvasLocation" x="287" y="129"/>
+        </scene>
+        <!--Detail Interface Controller-->
+        <scene sceneID="o7x-6U-aKN">
+            <objects>
+                <controller id="XLc-OS-duD" customClass="DetailInterfaceController" customModule="GaleneWatch_WatchKit_Extension">
+                    <items>
+                        <label width="136" height="39" alignment="left" text="Label" textAlignment="center" id="JCT-fl-TL8">
+                            <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
+                        </label>
+                        <label width="135" height="24" alignment="left" text="Label" textAlignment="center" id="goL-ZT-SoO"/>
+                        <label width="134" height="25" alignment="left" text="Label" textAlignment="center" id="nRB-4R-E3h"/>
+                        <dateLabel width="136" height="36" alignment="left" textAlignment="center" id="WEH-3z-7CH">
+                            <dateFormatterStyle key="dateStyle" short="YES"/>
+                            <dateFormatterStyle key="timeStyle" short="YES"/>
+                        </dateLabel>
+                    </items>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="636" y="132"/>
         </scene>
     </scenes>
 </document>
