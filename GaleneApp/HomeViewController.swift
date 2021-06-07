@@ -8,10 +8,12 @@
 import UIKit
 import HealthKit
 import FirebaseStorage
-import Firebase
+import FirebaseFirestore
 import FirebaseAuth
+import WatchConnectivity
 
-class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    
 
     @IBOutlet weak var snButton: UIButton!
     @IBOutlet weak var testbutton: UIButton!
@@ -21,6 +23,10 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     private let storage = Storage.storage()
     private var handle: AuthStateDidChangeListenerHandle?
     private var useruid : String?
+    var db : Firestore!
+    var user : User?
+    var historialData: Historial = Historial()
+    var miSession : WCSession! = nil
     // Get a reference to the storage service using the default Firebase App
     
 
@@ -36,10 +42,60 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         self.navigationController!.navigationBar.shadowImage = UIImage()
         self.navigationController!.navigationBar.isTranslucent = true
         self.navigationController!.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        let settings = FirestoreSettings()
+        if WCSession.isSupported() {//4.1
+             miSession = WCSession.default//4.2
+             miSession.delegate = self//4.3
+             miSession.activate()//4.4
+            
+        }
+        
+        
+        Firestore.firestore().settings = settings
+        // [END setup]
+        self.db = Firestore.firestore()
         
         // Do any additional setup after loading the view.
     }
-    
+    struct Reto {
+        var cumplido: Bool
+        var descripcion: String
+        var recordatorio: Bool
+        
+        func toAnyObject()->Any{
+            return[
+                "cumplido": cumplido,
+                "descripcion": descripcion,
+                "recordatorio": recordatorio
+            ]
+        }
+        
+    }
+    struct Historial {
+        var fecha: Date = Date()
+        var imagen: String = ""
+        var resultado: String = ""
+        var retos: [[String: Any]] = []
+        
+        func toAnyObject()->Any{
+            return[
+                "fecha": fecha,
+                "imagen": imagen,
+                "resultado": resultado,
+                "retos": retos,
+            ]
+        }
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            if let user = user {
+                self.user = user
+                self.fetchHistorial()
+              }
+        }
+        
+    }
     @IBAction func logOutButton(_ sender: Any) {
         do{
             try Auth.auth().signOut()
@@ -56,6 +112,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             if let user = user {
                 self.useruid = user.uid
                 self.downloadProfileImage()
+                
               }
         }
         
@@ -109,14 +166,65 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
-    
+    func fetchHistorial(){
+        
+        db.collection("historial").whereField("userID", isEqualTo: useruid).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print(err)
+            } else {
+                var historial : [Historial] = []
+                for document in querySnapshot!.documents {
+                    historial.append(Historial(fecha: (document.get("fecha") as! Timestamp).dateValue(), imagen: document.get("imagen") as! String, resultado: document.get("resultado") as! String, retos: document.get("retos") as! [[String: Any ]]))
+                }
+                if !historial.isEmpty {
+                    let mostRecentHistorial = historial.reduce(historial[0], { $0.fecha.timeIntervalSince1970 > $1.fecha.timeIntervalSince1970 ? $0 : $1 } )
+                    /*if(self.historialData.imagen == "tenis" || self.historialData.imagen == "balon") {
+                        self.getPasos()
+                    }*/
+                    let mensaje = ["contenido" : mostRecentHistorial.retos, "fecha": mostRecentHistorial.fecha] as [String : Any]
+                    print(mostRecentHistorial)
+                    if self.miSession.isReachable{
+                        self.miSession.sendMessage(mensaje, replyHandler: nil, errorHandler: self.messageError(err: ))
+                    }else{
+                        print("AYNO")
+                    }
+                    
+                }
+            }
+        }
+        
+    }
     // MARK: - Navigation
+    func messageError(err : Error)->Void{
+        print("error")
+    }
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    
+}
+extension HomeViewController:  WCSessionDelegate{
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        // To support multiple watches.
+        print("WC Session did become inactive.")
+    }
 
+    func sessionDidDeactivate(_ session: WCSession) {
+        // To support multiple watches.
+        WCSession.default.activate()
+        print("WC Session did deactivate.")
+    }
+
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        if let error = error {
+            print("WC Session activation failed with error: \(error.localizedDescription)")
+            return
+        }
+        print("Phone activated with state: \(activationState.rawValue)")
+    }
+    func sessionReachabilityDidChange(_ session: WCSession){
+        print("cambie")
+    }
 }
