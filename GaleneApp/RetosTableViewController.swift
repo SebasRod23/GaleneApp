@@ -23,7 +23,7 @@ class RetosTableViewCell: UITableViewCell {
 
 class RetosTableViewController: UITableViewController {
     
-    var historialData: Historial?
+    var historialData: Historial = Historial()
     var user : User?
     /** @var handle
           @brief The handler for the auth state listener, to allow cancelling later.
@@ -51,10 +51,10 @@ class RetosTableViewController: UITableViewController {
     }
     
     struct Historial {
-        var fecha: Date
-        let imagen: String
-        let resultado: String
-        var retos: [[String: Any]]
+        var fecha: Date = Date()
+        var imagen: String = ""
+        var resultado: String = ""
+        var retos: [[String: Any]] = []
         
         func toAnyObject()->Any{
             return[
@@ -102,11 +102,14 @@ class RetosTableViewController: UITableViewController {
                 var historial : [Historial] = []
                 for document in querySnapshot!.documents {                    historial.append(Historial(fecha: (document.get("fecha") as! Timestamp).dateValue(), imagen: document.get("imagen") as! String, resultado: document.get("resultado") as! String, retos: document.get("retos") as! [[String: Any ]]))
                 }
-                let mostRecentHistorial = historial.reduce(historial[0], { $0.fecha.timeIntervalSince1970 > $1.fecha.timeIntervalSince1970 ? $0 : $1 } )
-                self.historialData = mostRecentHistorial
-                if(self.historialData?.imagen == "tenis" || self.historialData?.imagen == "balon") {
-                    self.getPasos()
+                if !historial.isEmpty {
+                    let mostRecentHistorial = historial.reduce(historial[0], { $0.fecha.timeIntervalSince1970 > $1.fecha.timeIntervalSince1970 ? $0 : $1 } )
+                    self.historialData = mostRecentHistorial
+                    if(self.historialData.imagen == "tenis" || self.historialData.imagen == "balon") {
+                        self.getPasos()
+                    }
                 }
+                
             }
             self.tableView.reloadData()
         }
@@ -149,7 +152,7 @@ class RetosTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return historialData?.retos.count ?? 0
+        return historialData.retos.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -158,8 +161,8 @@ class RetosTableViewController: UITableViewController {
         if (object_getClass(cell)?.description()  == "NSNull") {
             cell = UITableViewCell( style: UITableViewCell.CellStyle.default, reuseIdentifier: "reto") as! RetosTableViewCell
         }
-        let retoInfo = self.historialData?.retos[indexPath.row]
-        let strInfo: String = String(retoInfo?["descripcion"] as! String)
+        let retoInfo = self.historialData.retos[indexPath.row]
+        let strInfo: String = String(retoInfo["descripcion"] as! String)
           
 
         cell.retoLabel?.text = strInfo
@@ -174,7 +177,7 @@ class RetosTableViewController: UITableViewController {
         cell.completadoButton.addTarget(self, action: #selector(goToCongrats(sender:)), for: .touchUpInside)
         cell.recordarSwitch.tag = indexPath.row
         cell.recordarSwitch.addTarget(self, action: #selector(recordar(sender:)), for: .valueChanged)
-        if(self.historialData?.imagen == "tenis" || self.historialData?.imagen == "balon"){
+        if(self.historialData.imagen == "tenis" || self.historialData.imagen == "balon"){
             cell.progressLabel?.text=String(self.count!)+" pasos"
             cell.progressLabel?.isHidden = false
         } else{
@@ -194,8 +197,8 @@ class RetosTableViewController: UITableViewController {
                 if granted {
                     let content = UNMutableNotificationContent()
                         content.title = "Late wake up call"
-                        let retoInfo = self.historialData?.retos[rowIndex]
-                        let strInfo: String = retoInfo?["descripcion"] as! String
+                    let retoInfo = self.historialData.retos[rowIndex]
+                        let strInfo: String = retoInfo["descripcion"] as! String
                         content.body = strInfo
                         content.categoryIdentifier = "alarm"
                         content.userInfo = ["customData": "fizzbuzz"]
@@ -217,8 +220,8 @@ class RetosTableViewController: UITableViewController {
     func goToCongrats(sender: UIButton){
         let rowIndex: Int = sender.tag
         let nextView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RetoTerminadoViewController") as! RetoTerminadoViewController
-        let retoInfo = self.historialData?.retos[rowIndex]
-        let strInfo: String = retoInfo?["descripcion"] as! String
+        let retoInfo = self.historialData.retos[rowIndex]
+        let strInfo: String = retoInfo["descripcion"] as! String
         nextView.retoInp = strInfo
         self.navigationController?.pushViewController(nextView, animated: true)
     }
