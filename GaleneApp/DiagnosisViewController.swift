@@ -12,6 +12,11 @@ import FirebaseAuth
 
 class DiagnosisViewController: UIViewController {
 
+    
+    @IBOutlet weak var lblResultado: UILabel!
+    
+    @IBOutlet weak var lblDescripcion: UILabel!
+    
     var tagResult: String?
     var diagnosis: String = ""
     var nretos: Int = 0
@@ -29,6 +34,14 @@ class DiagnosisViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        lblResultado.text = diagnosis.uppercased()
+        if diagnosis=="Ansiedad leve" {
+            lblDescripcion.text = "Te recomendamos completar el reto que hemos seleccionado especialmente para ti"
+        }
+        else{
+            lblDescripcion.text = "Te recomendamos seguir los siguientes "+String(nretos)+" retos que hemos seleccionado para ti y a buscar ayuda profesional (Consulta el mapa)"
+        }
         self.navigationItem.setHidesBackButton(true, animated: true)
         // [START setup]
         let settings = FirestoreSettings()

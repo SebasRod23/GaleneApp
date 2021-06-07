@@ -53,7 +53,7 @@ class PreguntasViewController: UIViewController {
         // [END setup]
         db = Firestore.firestore()
         getQuestion()
-        
+        lblNumber.text="Pregunta "+String(counter+1)
         
     }
     
@@ -106,7 +106,6 @@ class PreguntasViewController: UIViewController {
             bttn2.isHidden = true
             bttn3.isHidden = true
             lblQuestion.text="Has terminado el quiz!"
-            lblQuestion.font=lblQuestion.font.withSize(36)
             lblNumber.text=""
         }
         else{

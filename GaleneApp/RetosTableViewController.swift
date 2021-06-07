@@ -173,6 +173,9 @@ class RetosTableViewController: UITableViewController {
                 }
          */
         cell.retoLabel?.text=strInfo
+        print("Imagen:")
+        print(self.historialData.imagen )
+        cell.iconLabel.image = UIImage(named: self.historialData.imagen )
         cell.completadoButton.tag = indexPath.row
         cell.completadoButton.addTarget(self, action: #selector(goToCongrats(sender:)), for: .touchUpInside)
         cell.recordarSwitch.tag = indexPath.row
