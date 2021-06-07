@@ -34,22 +34,25 @@
             </objects>
             <point key="canvasLocation" x="287" y="129"/>
         </scene>
-        <!--Detail Interface Controller-->
+        <!--showDetails-->
         <scene sceneID="o7x-6U-aKN">
             <objects>
-                <controller id="XLc-OS-duD" customClass="DetailInterfaceController" customModule="GaleneWatch_WatchKit_Extension">
+                <controller identifier="showDetails" id="XLc-OS-duD" customClass="DetailInterfaceController" customModule="GaleneWatch_WatchKit_Extension">
                     <items>
                         <label width="136" height="39" alignment="left" text="Label" textAlignment="center" id="JCT-fl-TL8">
                             <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
                         </label>
                         <label width="135" height="24" alignment="left" text="Label" textAlignment="center" id="goL-ZT-SoO"/>
                         <label width="134" height="25" alignment="left" text="Label" textAlignment="center" id="nRB-4R-E3h"/>
-                        <dateLabel width="136" height="36" alignment="left" textAlignment="center" id="WEH-3z-7CH">
-                            <dateFormatterStyle key="dateStyle" short="YES"/>
-                            <dateFormatterStyle key="timeStyle" short="YES"/>
-                        </dateLabel>
+                        <label width="136" height="28" alignment="left" text="Label" textAlignment="center" id="lIl-CK-U4H"/>
                     </items>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="categoryLabel" destination="goL-ZT-SoO" id="boj-Ck-U8c"/>
+                        <outlet property="dateLabel" destination="lIl-CK-U4H" id="t1v-yH-dQ1"/>
+                        <outlet property="detailLabel" destination="nRB-4R-E3h" id="Z1V-2h-crn"/>
+                        <outlet property="titleLabel" destination="JCT-fl-TL8" id="waH-YK-g6m"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="636" y="132"/>
