@@ -21,6 +21,7 @@
 		AB01C775265E2818006F6DE8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB01C774265E2818006F6DE8 /* LoginViewController.swift */; };
 		AB01C77B265E293E006F6DE8 /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB01C77A265E293E006F6DE8 /* RegistroViewController.swift */; };
 		AB154A952649FF2E008DEC4B /* MapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB154A942649FF2E008DEC4B /* MapaViewController.swift */; };
+		AB39EBF626637C110064295E /* ForgotPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB39EBF526637C110064295E /* ForgotPassViewController.swift */; };
 		AB45E070264AF75F00F73C5A /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB45E06F264AF75F00F73C5A /* Annotation.swift */; };
 		AB559A0E2628FC3000501532 /* RetosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB559A0D2628FC3000501532 /* RetosTableViewController.swift */; };
 		AB8030E426228A04009B97F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8030E326228A04009B97F5 /* AppDelegate.swift */; };
@@ -29,8 +30,10 @@
 		AB8030EB26228A04009B97F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB8030E926228A04009B97F5 /* Main.storyboard */; };
 		AB8030ED26228A05009B97F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB8030EC26228A05009B97F5 /* Assets.xcassets */; };
 		AB8030F026228A05009B97F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB8030EE26228A05009B97F5 /* LaunchScreen.storyboard */; };
+		ABA94EB2266D937300CC8154 /* TableClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA94EB1266D937300CC8154 /* TableClass.swift */; };
 		ABAA2361264B21430044901C /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAA2360264B21430044901C /* Properties.swift */; };
 		ABDDE8FD262942D900AD550D /* RetoTerminadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDDE8FC262942D900AD550D /* RetoTerminadoViewController.swift */; };
+		ABF1FF3A266DA342000BDEA7 /* DetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF1FF39266DA342000BDEA7 /* DetailInterfaceController.swift */; };
 		B021BF002627C8BF00D0F972 /* DiagnosisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B021BEFF2627C8BF00D0F972 /* DiagnosisViewController.swift */; };
 		B021BF032627D14000D0F972 /* HistorialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B021BF022627D14000D0F972 /* HistorialTableViewController.swift */; };
 		B0B167FD2648D17C00A65C75 /* PreguntasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B167FC2648D17C00A65C75 /* PreguntasViewController.swift */; };
@@ -110,6 +113,7 @@
 		AB01C774265E2818006F6DE8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AB01C77A265E293E006F6DE8 /* RegistroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
 		AB154A942649FF2E008DEC4B /* MapaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaViewController.swift; sourceTree = "<group>"; };
+		AB39EBF526637C110064295E /* ForgotPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassViewController.swift; sourceTree = "<group>"; };
 		AB45E06F264AF75F00F73C5A /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 		AB559A0D2628FC3000501532 /* RetosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetosTableViewController.swift; sourceTree = "<group>"; };
 		AB8030E026228A04009B97F5 /* GaleneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GaleneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,8 +124,10 @@
 		AB8030EC26228A05009B97F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB8030EF26228A05009B97F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB8030F126228A05009B97F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABA94EB1266D937300CC8154 /* TableClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableClass.swift; sourceTree = "<group>"; };
 		ABAA2360264B21430044901C /* Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
 		ABDDE8FC262942D900AD550D /* RetoTerminadoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetoTerminadoViewController.swift; sourceTree = "<group>"; };
+		ABF1FF39266DA342000BDEA7 /* DetailInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInterfaceController.swift; sourceTree = "<group>"; };
 		B021BEFF2627C8BF00D0F972 /* DiagnosisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisViewController.swift; sourceTree = "<group>"; };
 		B021BF022627D14000D0F972 /* HistorialTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorialTableViewController.swift; sourceTree = "<group>"; };
 		B0B167FC2648D17C00A65C75 /* PreguntasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreguntasViewController.swift; sourceTree = "<group>"; };
@@ -247,10 +253,24 @@
 				ABAA2360264B21430044901C /* Properties.swift */,
 				AB01C774265E2818006F6DE8 /* LoginViewController.swift */,
 				AB01C77A265E293E006F6DE8 /* RegistroViewController.swift */,
-				04353DA526642085006BCBE8 /* HistorialDetailViewController.swift */,
-				04EBF270266D976D00F9DB9B /* RetosEnHistorialTableViewCell.swift */,
+				AB39EBF526637C110064295E /* ForgotPassViewController.swift */,
 			);
 			path = GaleneApp;
+			sourceTree = "<group>";
+		};
+		AC14C929378FC9A9B4EA9B8B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3CA22BFFA3EE0A52EB0E1381 /* Pods-GaleneApp.debug.xcconfig */,
+				EFABA291047B184E0C85FFE0 /* Pods-GaleneApp.release.xcconfig */,
+				DA58BB6EC95C0860CA0755F1 /* Pods-GaleneWatch.debug.xcconfig */,
+				34DF694EDA21BCE651B0DA03 /* Pods-GaleneWatch.release.xcconfig */,
+				F8087834F6B34A730BF83DD3 /* Pods-GaleneWatch WatchKit App.debug.xcconfig */,
+				53B5E948C3A5007A49978750 /* Pods-GaleneWatch WatchKit App.release.xcconfig */,
+				9DE5AE90C17BB6BC9397981C /* Pods-GaleneWatch WatchKit Extension.debug.xcconfig */,
+				B76383EB491B1F2E7C2911EA /* Pods-GaleneWatch WatchKit Extension.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		B0B44E94264C4E8000AF94FD /* Frameworks */ = {
@@ -283,6 +303,8 @@
 				B0DBB9902658299600762B8A /* ComplicationController.swift */,
 				B0DBB9922658299700762B8A /* Assets.xcassets */,
 				B0DBB9942658299700762B8A /* Info.plist */,
+				ABA94EB1266D937300CC8154 /* TableClass.swift */,
+				ABF1FF39266DA342000BDEA7 /* DetailInterfaceController.swift */,
 			);
 			path = "GaleneWatch WatchKit Extension";
 			sourceTree = "<group>";
@@ -560,6 +582,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB39EBF626637C110064295E /* ForgotPassViewController.swift in Sources */,
 				AB01C775265E2818006F6DE8 /* LoginViewController.swift in Sources */,
 				B0B167FD2648D17C00A65C75 /* PreguntasViewController.swift in Sources */,
 				50F89F2626461002003641EE /* PreInfoViewController.swift in Sources */,
@@ -589,8 +612,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0DBB98F2658299600762B8A /* ExtensionDelegate.swift in Sources */,
+				ABA94EB2266D937300CC8154 /* TableClass.swift in Sources */,
 				B0DBB98D2658299600762B8A /* InterfaceController.swift in Sources */,
 				B0DBB9912658299600762B8A /* ComplicationController.swift in Sources */,
+				ABF1FF3A266DA342000BDEA7 /* DetailInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,50 +7,50 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var correoField: UITextField!
     var handle: AuthStateDidChangeListenerHandle?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if Auth.auth().currentUser != nil {
+                performSegue(withIdentifier: "LoginToHome", sender: self)
+        }
         // Do any additional setup after loading the view.
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-          // ...
-        }
-        // util func (Temp)
+    @IBAction func passwordKeyboard(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    @IBAction func correoKeyboard(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    @IBAction func login(_ sender: Any) {
         setLogin()
     }
     
     func setLogin() {
-        let email = "owowo@gmail.com"
-        let password = "aaaaaa"
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-            if let user = authResult?.user {
-                let uid : String = user.uid
+        let email = correoField.text ?? ""
+        let password = passwordField.text ?? ""
+        if(!(password=="") && !(email=="")){
+            Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+                guard error == nil else {
+                    self?.errorLabel.text="Usuario o contrasena incorrecto"
+                    print("No sirvio")
+                    return
+                }
+                self?.performSegue(withIdentifier: "LoginToHome", sender: self)
+                print("Si sirvio")
             }
-            
-            guard let strongSelf = self else { return }
-    }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        Auth.auth().removeStateDidChangeListener(handle!)
+        }
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
