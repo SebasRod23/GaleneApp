@@ -14,6 +14,7 @@ class RetoTerminadoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController!.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.shareButton!.layer.cornerRadius = 10
         self.retoLabel.text = self.retoInp
     }
