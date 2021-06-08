@@ -22,6 +22,30 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     private var handle: AuthStateDidChangeListenerHandle?
     private var useruid : String?
     // Get a reference to the storage service using the default Firebase App
+    var db: Firestore!
+    var user: User?
+    var historialData: Historial = Historial()
+    
+    @IBOutlet weak var NameLabel: UILabel!
+    @IBOutlet weak var EstadoLabel: UILabel!
+    
+    
+    struct Historial{
+        var fecha: Date = Date()
+        var imagen: String = ""
+        var resultado: String = ""
+        var retos: [[String: Any]] = []
+        var id: String = ""
+        
+        func toAnyObject()->Any{
+            return[
+                "fecha": fecha,
+                "imagen": imagen,
+                "resultado": resultado,
+                "retos": retos,
+            ]
+        }
+    }
     
 
     override func viewDidLoad() {
@@ -36,6 +60,11 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         self.navigationController!.navigationBar.shadowImage = UIImage()
         self.navigationController!.navigationBar.isTranslucent = true
         self.navigationController!.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
+        let settings = FirestoreSettings()
+        Firestore.firestore().settings = settings
+        self.db = Firestore.firestore()
+        
         
         // Do any additional setup after loading the view.
     }
@@ -54,8 +83,11 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     override func viewWillAppear(_ animated: Bool) {
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
             if let user = user {
+                self.user = user
                 self.useruid = user.uid
                 self.downloadProfileImage()
+                self.fetchHistorial()
+                //self.setUserN()
               }
         }
         
@@ -64,6 +96,29 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     override func viewWillDisappear(_ animated: Bool) {
         Auth.auth().removeStateDidChangeListener(handle!)
     }
+    
+    func setUserN(){
+        NameLabel.text = user?.email
+        EstadoLabel.text = historialData.resultado
+    }
+    
+    func fetchHistorial(){
+            let uid : String = self.user!.uid
+            db.collection("historial").whereField("userID", isEqualTo: uid).getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print(err)
+                } else {
+                    var historial : [Historial] = []
+                    for document in querySnapshot!.documents {                    historial.append(Historial(fecha: (document.get("fecha") as! Timestamp).dateValue(), imagen: document.get("imagen") as! String, resultado: document.get("resultado") as! String, retos: document.get("retos") as! [[String: Any ]], id: document.documentID))
+                    }
+                    if !historial.isEmpty {
+                        let mostRecentHistorial = historial.reduce(historial[0], { $0.fecha.timeIntervalSince1970 > $1.fecha.timeIntervalSince1970 ? $0 : $1 } )
+                        self.historialData = mostRecentHistorial
+                    }
+                    self.setUserN()
+                }
+            }
+        }
     
     func downloadProfileImage() {
         let pathReference = storage.reference(withPath: "images/" + useruid! + "/profile.jpg")
