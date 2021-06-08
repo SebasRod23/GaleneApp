@@ -16,7 +16,7 @@
                                 <tableRow identifier="TableClass" id="uSp-fQ-93p" customClass="TableClass" customModule="GaleneWatch_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="WEF-Tr-FP4">
                                         <items>
-                                            <label alignment="center" verticalAlignment="center" text="Label" id="xf2-w7-gZs"/>
+                                            <label width="1" widthAdjustment="1" alignment="center" verticalAlignment="center" text="Label" textAlignment="center" numberOfLines="0" id="xf2-w7-gZs"/>
                                         </items>
                                         <color key="backgroundColor" red="0.427950263" green="0.72763651610000002" blue="0.64675420520000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </group>
@@ -39,18 +39,34 @@
             <objects>
                 <controller identifier="showDetails" id="XLc-OS-duD" customClass="DetailInterfaceController" customModule="GaleneWatch_WatchKit_Extension">
                     <items>
-                        <label width="136" height="39" alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="JCT-fl-TL8">
-                            <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
+                        <group width="1" alignment="left" id="uS4-sr-VQD">
+                            <items>
+                                <label width="1" widthAdjustment="1" alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="JCT-fl-TL8">
+                                    <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
+                                </label>
+                            </items>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="5" bottom="15"/>
+                        </group>
+                        <group width="1" alignment="left" id="uUZ-Af-ynN">
+                            <items>
+                                <label width="1" widthAdjustment="1" alignment="center" verticalAlignment="center" text="Label" textAlignment="center" numberOfLines="0" id="ixL-iX-EPL">
+                                    <fontDescription key="font" type="italicSystem" pointSize="19"/>
+                                </label>
+                            </items>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="10"/>
+                        </group>
+                        <label width="1" widthAdjustment="1" alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="nRB-4R-E3h">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
                         </label>
-                        <label width="135" height="24" alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="goL-ZT-SoO"/>
-                        <label width="136" height="28" alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="lIl-CK-U4H"/>
-                        <label width="134" height="25" alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="nRB-4R-E3h"/>
+                        <label width="1" widthAdjustment="1" alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="lIl-CK-U4H">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                        </label>
                     </items>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
-                        <outlet property="categoryLabel" destination="goL-ZT-SoO" id="boj-Ck-U8c"/>
                         <outlet property="dateLabel" destination="lIl-CK-U4H" id="t1v-yH-dQ1"/>
                         <outlet property="detailLabel" destination="nRB-4R-E3h" id="Z1V-2h-crn"/>
+                        <outlet property="retoLabel" destination="ixL-iX-EPL" id="zuD-P0-pRQ"/>
                         <outlet property="titleLabel" destination="JCT-fl-TL8" id="waH-YK-g6m"/>
                     </connections>
                 </controller>
