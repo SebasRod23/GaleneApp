@@ -12,19 +12,25 @@ import Foundation
 class DetailInterfaceController: WKInterfaceController {
     
     @IBOutlet weak var titleLabel: WKInterfaceLabel!
-    @IBOutlet weak var categoryLabel: WKInterfaceLabel!
     @IBOutlet weak var detailLabel: WKInterfaceLabel!
+    
+    
+    @IBOutlet weak var retoLabel: WKInterfaceLabel!
+    
     @IBOutlet weak var dateLabel: WKInterfaceLabel!
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
-        print("MY MENSAJEEEEEEEEEEEEE")
         print(context!)
-        let data = context! as? [String : String]
-        titleLabel.setText(data!["reto"]!)
-        categoryLabel.setText(data!["type"])
-        detailLabel.setText(data!["detail"])
-        dateLabel.setText(data!["date"])
+        let data = context! as? [String : Any]
+        titleLabel.setText((data!["titulo"]! as! String))
+        retoLabel.setText((data!["reto"]! as! String))
+        if (data!["cumplido"] as? Bool)!{
+            detailLabel.setText("Reto cumplido")
+        }
+        else{
+            detailLabel.setText("Reto pendiente")
+        }
+        dateLabel.setText((data!["fecha"] as! String))
         // Configure interface objects here.
     }
 
