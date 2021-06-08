@@ -24,16 +24,19 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate  {
     
     @IBOutlet weak var tableView: WKInterfaceTable!
     var retos: [Data] = []
+    
     override func awake(withContext context: Any?) {
         // Configure interface objects here.
         super.awake(withContext: context)
+        // Para visualizar una prueba con datos estáticos, descomentar estas lineas
+        /*
         retos.append(Data(cumplido: false, descripcion: "Pintar mandala", fecha: "07-06-2021"))
         retos.append(Data(cumplido: true, descripcion: "Haz mucho mucho mucho mucho mucho ejercicio", fecha: "07-06-2021"))
         retos.append(Data(cumplido: false, descripcion: "Escucha musica", fecha: "07-06-2021"))
-        
-        
-        setupTable()
+         setupTable()
+        */
     }
+    
     func setupTable() {
         tableView.setNumberOfRows(retos.count, withRowType: "TableClass")
         
@@ -48,6 +51,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate  {
         let everything = ["titulo":"Reto #"+String(rowIndex+1),"reto" : retos[rowIndex].descripcion, "fecha" : retos[rowIndex].fecha, "cumplido" : retos[rowIndex].cumplido] as [String : Any]
         pushController(withName: "showDetails", context: everything)
     }
+    
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
@@ -60,11 +64,14 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate  {
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
     }
+    
+    // En esta función recibimos los retos que se muestran en el apple Watch
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
             
-            let text = message["message"] as! String
-            
-            print(text)
+            let dataInp = message["message"] as! [Data]
+            print(dataInp)
+            retos = dataInp
+            setupTable()
             
         }
         

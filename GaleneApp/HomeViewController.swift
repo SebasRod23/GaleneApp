@@ -50,6 +50,13 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
     }
     
+    struct Data {
+        var cumplido: Bool
+        var descripcion: String
+        var fecha: String
+        
+    }
+    
 
     override func viewDidLoad() {
 
@@ -72,16 +79,23 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
         self.db = Firestore.firestore()
-        
-        
-        // Do any additional setup after loading the view.
-        sendText()
     }
     
-    func sendText() {
+    // Esta función envia los datos de los retos al Apple Watch después
+    // de hacer el fetch al historial de retos
+    func sendData() {
             
-            let txt = "Hello world"
-            let message = ["message":txt]
+        var retosArray : [Data] = []
+        
+        let formatter = DateFormatter()
+                    formatter.dateStyle = .short
+        
+        for reto in historialData.retos {
+            let data_it : Data = Data(cumplido: (reto["cumplido"] as! Bool), descripcion: (reto["descripcion"] as! String), fecha: (formatter.string(from: historialData.fecha)))
+                                      
+            retosArray.append(data_it)
+        }
+        let message = ["message":retosArray]
             
             wcSession.sendMessage(message, replyHandler: nil) { (error) in
                 
@@ -90,6 +104,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             }
             
         }
+    
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
             
             // Code
@@ -125,7 +140,6 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                 self.useruid = user.uid
                 self.downloadProfileImage()
                 self.fetchHistorial()
-                //self.setUserN()
               }
         }
         
@@ -154,6 +168,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                         self.historialData = mostRecentHistorial
                     }
                     self.setUserN()
+                    self.sendData()
                 }
             }
         }
