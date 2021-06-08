@@ -16,8 +16,9 @@
                                 <tableRow identifier="TableClass" id="uSp-fQ-93p" customClass="TableClass" customModule="GaleneWatch_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="WEF-Tr-FP4">
                                         <items>
-                                            <label alignment="left" text="Label" id="xf2-w7-gZs"/>
+                                            <label alignment="center" verticalAlignment="center" text="Label" id="xf2-w7-gZs"/>
                                         </items>
+                                        <color key="backgroundColor" red="0.427950263" green="0.72763651610000002" blue="0.64675420520000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </group>
                                     <connections>
                                         <outlet property="labelTable" destination="xf2-w7-gZs" id="H41-Bm-5xr"/>
@@ -26,7 +27,6 @@
                             </items>
                         </table>
                     </items>
-                    <color key="backgroundColor" red="0.42404198650000002" green="0.72769761089999996" blue="0.65087765460000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <connections>
                         <outlet property="tableView" destination="IFh-If-52X" id="ZpH-yR-blt"/>
                     </connections>
@@ -39,12 +39,12 @@
             <objects>
                 <controller identifier="showDetails" id="XLc-OS-duD" customClass="DetailInterfaceController" customModule="GaleneWatch_WatchKit_Extension">
                     <items>
-                        <label width="136" height="39" alignment="left" text="Label" textAlignment="center" id="JCT-fl-TL8">
+                        <label width="136" height="39" alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="JCT-fl-TL8">
                             <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
                         </label>
-                        <label width="135" height="24" alignment="left" text="Label" textAlignment="center" id="goL-ZT-SoO"/>
-                        <label width="134" height="25" alignment="left" text="Label" textAlignment="center" id="nRB-4R-E3h"/>
-                        <label width="136" height="28" alignment="left" text="Label" textAlignment="center" id="lIl-CK-U4H"/>
+                        <label width="135" height="24" alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="goL-ZT-SoO"/>
+                        <label width="134" height="25" alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="nRB-4R-E3h"/>
+                        <label width="136" height="28" alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="lIl-CK-U4H"/>
                     </items>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
