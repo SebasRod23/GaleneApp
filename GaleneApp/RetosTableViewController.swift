@@ -15,8 +15,8 @@ class RetosTableViewCell: UITableViewCell {
     @IBOutlet weak var retoLabel: UILabel!
     @IBOutlet weak var completadoButton: UIButton!
     @IBOutlet weak var progressLabel: UILabel!
-    @IBOutlet weak var recordarSwitch: UISwitch!
     
+    @IBOutlet weak var cellView: UIView!
     @IBAction func completadoFunc(_ sender: Any) {
     }
 }
@@ -55,6 +55,7 @@ class RetosTableViewController: UITableViewController {
         var imagen: String = ""
         var resultado: String = ""
         var retos: [[String: Any]] = []
+        var id: String = ""
         
         func toAnyObject()->Any{
             return[
@@ -68,6 +69,12 @@ class RetosTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController!.navigationBar.shadowImage = UIImage()
+        self.navigationController!.navigationBar.isTranslucent = true
+        self.navigationController!.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
         tableView.delegate = self
         // [START setup]
         let settings = FirestoreSettings()
@@ -100,11 +107,12 @@ class RetosTableViewController: UITableViewController {
                 print(err)
             } else {
                 var historial : [Historial] = []
-                for document in querySnapshot!.documents {                    historial.append(Historial(fecha: (document.get("fecha") as! Timestamp).dateValue(), imagen: document.get("imagen") as! String, resultado: document.get("resultado") as! String, retos: document.get("retos") as! [[String: Any ]]))
+                for document in querySnapshot!.documents {                    historial.append(Historial(fecha: (document.get("fecha") as! Timestamp).dateValue(), imagen: document.get("imagen") as! String, resultado: document.get("resultado") as! String, retos: document.get("retos") as! [[String: Any ]], id: document.documentID))
                 }
                 if !historial.isEmpty {
                     let mostRecentHistorial = historial.reduce(historial[0], { $0.fecha.timeIntervalSince1970 > $1.fecha.timeIntervalSince1970 ? $0 : $1 } )
                     self.historialData = mostRecentHistorial
+                    
                     if(self.historialData.imagen == "tenis" || self.historialData.imagen == "balon") {
                         self.getPasos()
                     }
@@ -173,13 +181,11 @@ class RetosTableViewController: UITableViewController {
                 }
          */
         cell.retoLabel?.text=strInfo
-        print("Imagen:")
-        print(self.historialData.imagen )
+        cell.retoLabel.sizeToFit()
         cell.iconLabel.image = UIImage(named: self.historialData.imagen )
         cell.completadoButton.tag = indexPath.row
         cell.completadoButton.addTarget(self, action: #selector(goToCongrats(sender:)), for: .touchUpInside)
-        cell.recordarSwitch.tag = indexPath.row
-        cell.recordarSwitch.addTarget(self, action: #selector(recordar(sender:)), for: .valueChanged)
+
         if(self.historialData.imagen == "tenis" || self.historialData.imagen == "balon"){
             cell.progressLabel?.text=String(self.count!)+" pasos"
             cell.progressLabel?.isHidden = false
@@ -188,44 +194,62 @@ class RetosTableViewController: UITableViewController {
             cell.progressLabel?.isHidden = true
         }
         
-        
+        if(retoInfo["cumplido"] as! Bool){
+            cell.completadoButton.isHidden = true
+            cell.progressLabel.text="Completado"
+            cell.progressLabel.isHidden=false
+            cell.cellView.backgroundColor = #colorLiteral(red: 0.8862745098, green: 1, blue: 0.8745098039, alpha: 1)
+        } else{
+            cell.completadoButton.isHidden = false
+            cell.progressLabel.text=""
+            cell.progressLabel.isHidden=true
+            cell.cellView.backgroundColor = #colorLiteral(red: 0.4235294118, green: 0.7294117647, blue: 0.6509803922, alpha: 1)
+        }
+    
         return cell
     }
-    @objc func recordar(sender: UISwitch){
-        let rowIndex: Int = sender.tag
+    
+    
+    
+    @IBAction func recordar(_ sender: UISwitch) {
         if sender.isOn{
             let center = UNUserNotificationCenter.current()
 
             center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
                 if granted {
                     let content = UNMutableNotificationContent()
-                        content.title = "Late wake up call"
-                    let retoInfo = self.historialData.retos[rowIndex]
-                        let strInfo: String = retoInfo["descripcion"] as! String
+                        content.title = "Recordatorio diario"
+                        let strInfo = "Aun tienes retos pendientes, haz tu mejor esfuerzo"
                         content.body = strInfo
                         content.categoryIdentifier = "alarm"
                         content.userInfo = ["customData": "fizzbuzz"]
                         content.sound = UNNotificationSound.default
                         var dateComponents = DateComponents()
-                        dateComponents.hour = 3
-                        dateComponents.minute = 22
+                        dateComponents.hour = 19
+                        dateComponents.minute = 30
                         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
 
                         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
                         center.add(request)
-                } else {
-                    print("D'oh")
                 }
+                
             }
+        } else{
+            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         }
     }
-    @objc
-    func goToCongrats(sender: UIButton){
+    @objc func goToCongrats(sender: UIButton){
         let rowIndex: Int = sender.tag
         let nextView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RetoTerminadoViewController") as! RetoTerminadoViewController
         let retoInfo = self.historialData.retos[rowIndex]
         let strInfo: String = retoInfo["descripcion"] as! String
         nextView.retoInp = strInfo
+        
+        historialData.retos[rowIndex]["cumplido"] = true
+        
+        db.collection("historial").document(historialData.id).updateData(["retos": historialData.retos])
+        
+        fetchHistorial()
         self.navigationController?.pushViewController(nextView, animated: true)
     }
 }
