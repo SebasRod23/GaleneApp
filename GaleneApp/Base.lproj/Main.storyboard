@@ -137,6 +137,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="EstadoLabel" destination="fsI-et-rgK" id="cxi-Mt-L2x"/>
+                        <outlet property="NameLabel" destination="Ko3-Ym-1Vl" id="UFb-wY-YFc"/>
                         <outlet property="historialButton" destination="9Gq-kT-3Rz" id="F8w-tq-9ml"/>
                         <outlet property="profileImage" destination="Vi4-SM-LJt" id="Vli-Ly-DOs"/>
                         <outlet property="snButton" destination="4UU-ag-0aw" id="Mb6-gv-r0D"/>
