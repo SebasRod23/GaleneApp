@@ -10,9 +10,12 @@ import HealthKit
 import FirebaseStorage
 import Firebase
 import FirebaseAuth
+import WatchConnectivity
 
-class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, WCSessionDelegate  {
 
+    var wcSession : WCSession! = nil
+    
     @IBOutlet weak var snButton: UIButton!
     @IBOutlet weak var testbutton: UIButton!
     @IBOutlet weak var historialButton: UIButton!
@@ -51,6 +54,11 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     override func viewDidLoad() {
 
         super.viewDidLoad()
+        
+        wcSession = WCSession.default
+        wcSession.delegate = self
+        wcSession.activate()
+        
         testbutton.layer.cornerRadius = 10
         snButton.layer.cornerRadius = 10
         historialButton.layer.cornerRadius = 10
@@ -67,8 +75,38 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         
         // Do any additional setup after loading the view.
+        sendText()
     }
     
+    func sendText() {
+            
+            let txt = "Hello world"
+            let message = ["message":txt]
+            
+            wcSession.sendMessage(message, replyHandler: nil) { (error) in
+                
+                print(error.localizedDescription)
+                
+            }
+            
+        }
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+            
+            // Code
+            
+        }
+        
+        func sessionDidBecomeInactive(_ session: WCSession) {
+            
+            // Code
+            
+        }
+        
+        func sessionDidDeactivate(_ session: WCSession) {
+            
+            // Code
+            
+        }
     @IBAction func logOutButton(_ sender: Any) {
         do{
             try Auth.auth().signOut()

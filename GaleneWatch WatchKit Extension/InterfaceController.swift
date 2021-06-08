@@ -7,9 +7,11 @@
 
 import WatchKit
 import Foundation
+import WatchConnectivity
 
 
-class InterfaceController: WKInterfaceController {
+
+class InterfaceController: WKInterfaceController, WCSessionDelegate  {
     
     struct Data {
         var cumplido: Bool
@@ -17,6 +19,8 @@ class InterfaceController: WKInterfaceController {
         var fecha: String
         
     }
+    
+    var wcSession : WCSession!
     
     @IBOutlet weak var tableView: WKInterfaceTable!
     var retos: [Data] = []
@@ -46,10 +50,28 @@ class InterfaceController: WKInterfaceController {
     }
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
+        super.willActivate()
+
+        wcSession = WCSession.default
+        wcSession.delegate = self
+        wcSession.activate()
     }
     
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
     }
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+            
+            let text = message["message"] as! String
+            
+            print(text)
+            
+        }
+        
+        func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+            
+            // Code.
+            
+        }
 
 }
