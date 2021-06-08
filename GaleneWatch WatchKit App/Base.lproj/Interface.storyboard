@@ -43,8 +43,8 @@
                             <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
                         </label>
                         <label width="135" height="24" alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="goL-ZT-SoO"/>
-                        <label width="134" height="25" alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="nRB-4R-E3h"/>
                         <label width="136" height="28" alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="lIl-CK-U4H"/>
+                        <label width="134" height="25" alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="nRB-4R-E3h"/>
                     </items>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
