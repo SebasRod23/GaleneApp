@@ -185,14 +185,6 @@ class RetosTableViewController: UITableViewController {
         cell.iconLabel.image = UIImage(named: self.historialData.imagen )
         cell.completadoButton.tag = indexPath.row
         cell.completadoButton.addTarget(self, action: #selector(goToCongrats(sender:)), for: .touchUpInside)
-
-        if(self.historialData.imagen == "tenis" || self.historialData.imagen == "balon"){
-            cell.progressLabel?.text=String(self.count!)+" pasos"
-            cell.progressLabel?.isHidden = false
-        } else{
-            cell.progressLabel?.text=""
-            cell.progressLabel?.isHidden = true
-        }
         
         if(retoInfo["cumplido"] as! Bool){
             cell.completadoButton.isHidden = true
@@ -205,7 +197,16 @@ class RetosTableViewController: UITableViewController {
             cell.progressLabel.isHidden=true
             cell.cellView.backgroundColor = #colorLiteral(red: 0.4235294118, green: 0.7294117647, blue: 0.6509803922, alpha: 1)
         }
-    
+        
+        if(self.historialData.imagen == "run"){
+            cell.progressLabel.text=String(self.count!)+" pasos"
+            cell.progressLabel.isHidden = false
+        } else{
+            cell.progressLabel.text=""
+            cell.progressLabel.isHidden = true
+        }
+
+        
         return cell
     }
     
